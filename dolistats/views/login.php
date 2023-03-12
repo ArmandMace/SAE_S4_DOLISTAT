@@ -16,6 +16,13 @@
 ?>
 
 <!-- TODO completer le code HTML de la page + CSS -->
+    <h1>Dolistats</h1><br>
+    <form name="login" target="index.html" method="POST">
+        <input type="text" name="identifiant" placeholder="identifiant">
+        <input type="text" name="mdp" placeholder="mot de passe">
+        <input type="hidden" name="controller" value="login">
+        <input type="hidden" name="action" value="login">
+    </form>
 </body>
 </html>
 

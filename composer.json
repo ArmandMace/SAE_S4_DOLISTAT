@@ -1,0 +1,29 @@
+{
+  "name": "groupesae/dolistats",
+  "description": "JSON de composer",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Armand",
+      "email": "armand.mace@iut-rodez.fr"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Wailtran08/SAE_S4_DOLISTAT"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "controllers\\": "dolistats/controllers",
+      "services\\": "dolistats/services",
+      "application\\": "dolistats/application"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "yasmf/yasmf": ">=1.6"
+  }
+}
