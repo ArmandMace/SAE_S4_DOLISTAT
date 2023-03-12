@@ -1,6 +1,6 @@
 <?php
 /*
- * yasmf - Yet Another Simple MVC Framework (For PHP)
+ * yasmf-1.6 - Yet Another Simple MVC Framework (For PHP)
  *     Copyright (C) 2023   Franck SILVESTRE
  *
  *     This program is free software: you can redistribute it and/or modify
@@ -22,16 +22,16 @@ namespace yasmf;
 use Exception;
 
 /**
- * Exception corresponding to a not found service
+ * Exception corresponding to a not found controller
  */
-class NoServiceAvailableForName extends Exception
+class NoControllerAvailableForName extends Exception
 {
 
     /**
-     * @param string $service_name the name of the not found service
+     * @param string $controller_name the name of the not found controller
      */
-    public function __construct(string $service_name)
+    public function __construct(string $controller_name)
     {
-        parent::__construct($service_name);
+        parent::__construct($controller_name);
     }
 }

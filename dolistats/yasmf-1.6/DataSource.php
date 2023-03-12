@@ -1,6 +1,6 @@
 <?php
 /**
- * yasmf - Yet Another Simple MVC Framework (For PHP)
+ * yasmf-1.6 - Yet Another Simple MVC Framework (For PHP)
  *     Copyright (C) 2019   Franck SILVESTRE
  *
  *     This program is free software: you can redistribute it and/or modify

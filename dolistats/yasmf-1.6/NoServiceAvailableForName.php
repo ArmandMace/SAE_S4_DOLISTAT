@@ -1,6 +1,6 @@
 <?php
 /*
- * yasmf - Yet Another Simple MVC Framework (For PHP)
+ * yasmf-1.6 - Yet Another Simple MVC Framework (For PHP)
  *     Copyright (C) 2023   Franck SILVESTRE
  *
  *     This program is free software: you can redistribute it and/or modify
@@ -19,23 +19,19 @@
 
 namespace yasmf;
 
+use Exception;
+
 /**
- * Interface describing the factory able to provide the application with its components
+ * Exception corresponding to a not found service
  */
-interface ComponentFactory
+class NoServiceAvailableForName extends Exception
 {
 
     /**
-     * @param string $controller_name the name of the controller to instanciate
-     * @return mixed the controller
-     * @throws NoControllerAvailableForName when controller is not found
+     * @param string $service_name the name of the not found service
      */
-    public function buildControllerByName(string $controller_name): mixed;
-
-    /**
-     * @param string $service_name the name of the service
-     * @return mixed the created service
-     * @throws NoServiceAvailableForName when service is not found
-     */
-    public function buildServiceByName(string $service_name): mixed;
+    public function __construct(string $service_name)
+    {
+        parent::__construct($service_name);
+    }
 }
