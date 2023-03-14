@@ -10,7 +10,7 @@
 <body>
 
 <?php
-    require $_SERVER['DOCUMENT_ROOT']. PREFIX_TO_RELATIVE_PATH. "/lib/vendor/autoload.php";
+    require $_SERVER['DOCUMENT_ROOT']. "/vendor/autoload.php";
 
     use yasmf\HttpHelper;
 ?>

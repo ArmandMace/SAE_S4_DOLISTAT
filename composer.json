@@ -3,6 +3,9 @@
   "description": "JSON de composer",
   "minimum-stability": "stable",
   "license": "proprietary",
+  "config": {
+    "vendor-dir": "dolistats/lib/vendor"
+  },
   "authors": [
     {
       "name": "Armand",
@@ -12,7 +15,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/Wailtran08/SAE_S4_DOLISTAT"
+      "url": "https://github.com/the-yasmf-project/yasmf"
     }
   ],
   "autoload": {
@@ -23,7 +26,10 @@
     }
   },
   "require": {
-    "php": ">=8.0",
-    "yasmf/yasmf": ">=1.6"
+    "php": ">=8.1",
+    "phpunit/phpunit": "10.0.*",
+    "phpstan/phpstan": "1.10.*",
+    "yasmf/yasmf": ">=1.6",
+    "ext-curl": "*"
   }
 }

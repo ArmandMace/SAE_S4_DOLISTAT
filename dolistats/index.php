@@ -1,6 +1,6 @@
 <?php
     const PREFIX_TO_RELATIVE_PATH = "/dolistats";
-    require $_SERVER['DOCUMENT_ROOT']. PREFIX_TO_RELATIVE_PATH. "/lib/vendor/autoload.php";
+    require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
 
     use application\DefaultComponentFactory;
     use yasmf\Router;
