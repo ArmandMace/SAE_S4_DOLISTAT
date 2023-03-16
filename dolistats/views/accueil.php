@@ -11,7 +11,7 @@
 			<!-- navbar -->
 			<div class="row navbar">
 				<div class="col-md-1 col-xs-2">
-					<a href="pages/rechercheArticle.php">
+					<a href="rechercheArticle.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-search fa-2x"></span><br/><br/>
 							Recherche Article 
@@ -20,7 +20,7 @@
 				</div>
 
 				<div class="col-md-1 col-xs-2">
-					<a href="pages/rechercheClient.php">
+					<a href="rechercheClient.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-search fa-2x"></span><br/><br/>
 							Recherche Client 
@@ -29,7 +29,7 @@
 				</div>
 
 				<div class="col-md-1 col-xs-2">
-					<a href="pages/palmaresArticle.php">
+					<a href="palmaresArticle.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-chart-pie fa-2x"></span><br/><br/>
 							Palmarès Article 
@@ -38,7 +38,7 @@
 				</div>
 
 				<div class="col-md-1 col-xs-2">
-					<a href="pages/palmaresClient.php">
+					<a href="palmaresClient.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-chart-pie fa-2x"></span><br/><br/>
 							Palmarès Client 
@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="col-md-1 col-xs-2">
-					<a href="pages/chiffreDAffaires.php">
+					<a href="chiffreDAffaires.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-money-bill fa-2x"></span><br/><br/>
 							Chiffre d'affaires 
