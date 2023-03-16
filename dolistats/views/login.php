@@ -14,15 +14,29 @@
 
     use yasmf\HttpHelper;
 ?>
-
-<!-- TODO completer le code HTML de la page + CSS -->
-    <h1>Dolistats</h1><br>
-    <form name="login" target="index.html" method="POST">
-        <input type="text" name="identifiant" placeholder="identifiant">
-        <input type="text" name="mdp" placeholder="mot de passe">
-        <input type="hidden" name="controller" value="login">
-        <input type="hidden" name="action" value="login">
-    </form>
+    <div class="container">
+        <!-- Titre : DoliStats -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 xs-12 titre">DoliStats</div>
+        </div>
+        <!--  -->
+        <form action="pages/accueil.php" method="post">
+            <!-- Identifiant -->
+            <div class="row">
+                <span class="fa fa-user fa-3x"></span>
+                <input type="text" name="login" placeholder="Identifiant" class="authentification">
+            </div>
+            <!-- Mot de passe -->
+            <div class="row">
+                <span class="fa fa-lock fa-3x"></span>
+                <input type="text" name="password" placeholder="Mot de passe"class="authentification">
+            </div>
+            <!-- Bouton "Se connecter" -->
+            <div class="row">
+                <input type="submit" name="connexion" value="Se connecter" class="btnConnect">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
 
