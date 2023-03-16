@@ -23,6 +23,7 @@
         {
             return match ($controller_name) {
                 "Home" => $this->buildHomeController(),
+                "Login" => $this->buildLoginController(),
                 default => throw new NoControllerAvailableForName($controller_name)
             };
         }
@@ -53,7 +54,7 @@
          */
         public function buildLoginController(): LoginController
         {
-            return new LoginController();
+            return new LoginController($this->buildAPIService());
         }
 
         /**

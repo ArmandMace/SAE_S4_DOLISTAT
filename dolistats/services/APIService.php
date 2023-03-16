@@ -8,6 +8,10 @@
     {
         const urlApi = "http://dolibarr.iut-rodez.fr/G2022-61/htdocs/api/index.php/";
 
+        /**
+         * @param $url
+         * @return \CurlHandle|false
+         */
         function createCurl($url): \CurlHandle|false
         {
             $curl = curl_init();
@@ -18,10 +22,15 @@
             return $curl;
         }
 
+        /**
+         * @param $id
+         * @param $mdp
+         * @return array|mixed
+         */
         function login($id, $mdp)
         {
-            $urlLogin = urlApi . "login?login=" . $id . "&password=" . $mdp;
-            $curl = createCurl($urlLogin);
+            $urlLogin = APIService::urlApi . "login?login=" . $id . "&password=" . $mdp;
+            $curl = $this->createCurl($urlLogin);
 
             $result = curl_exec($curl);
             $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);

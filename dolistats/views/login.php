@@ -2,9 +2,9 @@
 <html lang="eng">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../fontawesome-free-5.10.2-web/css/all.css">
-    <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../fontawesome-free-5.10.2-web/css/all.css">
+        <link rel="stylesheet" href="../css/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
             <div class="col-md-12 col-sm-12 xs-12 titre">DoliStats</div>
         </div>
         <!--  -->
-        <form action="index.php" method="post">
+        <form action="../index.php" method="post">
             <!-- Identifiant -->
             <div class="row">
                 <span class="fa fa-user fa-3x"></span>
