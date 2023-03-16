@@ -10,7 +10,7 @@
 		<div class="container-fluid">
 			<!-- navbar -->
 			<div class="row navbar">
-				div class="col-md-1 col-xs-2">
+				<div class="col-md-1 col-xs-2">
 					<a href="pages/rechercheArticle.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-search fa-2x"></span><br/><br/>
