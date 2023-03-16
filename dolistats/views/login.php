@@ -10,7 +10,7 @@
 <body>
 
 <?php
-    require $_SERVER['DOCUMENT_ROOT']. "/vendor/autoload.php";
+    require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
 
     use yasmf\HttpHelper;
 ?>
@@ -20,7 +20,7 @@
             <div class="col-md-12 col-sm-12 xs-12 titre">DoliStats</div>
         </div>
         <!--  -->
-        <form action="pages/accueil.php" method="post">
+        <form action="index.php" method="post">
             <!-- Identifiant -->
             <div class="row">
                 <span class="fa fa-user fa-3x"></span>
@@ -33,6 +33,8 @@
             </div>
             <!-- Bouton "Se connecter" -->
             <div class="row">
+                <input type="hidden" name="controller" value="login">
+                <input type="hidden" name="action" value="connexion">
                 <input type="submit" name="connexion" value="Se connecter" class="btnConnect">
             </div>
         </form>

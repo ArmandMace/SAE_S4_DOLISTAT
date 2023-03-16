@@ -2,6 +2,7 @@
     namespace application;
 
     use controllers\HomeController;
+    use controllers\LoginController;
     use services\APIService;
     use yasmf\ComponentFactory;
     use yasmf\NoControllerAvailableForName;
@@ -47,6 +48,17 @@
             return new HomeController();
         }
 
+        /**
+         * @return LoginController
+         */
+        public function buildLoginController(): LoginController
+        {
+            return new LoginController();
+        }
+
+        /**
+         * @return APIService
+         */
         public function buildAPIService(): APIService
         {
             if ($this->apiService == null) {
