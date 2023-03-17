@@ -20,7 +20,7 @@
             <div class="col-md-12 col-sm-12 xs-12 titre">DoliStats</div>
         </div>
         <!--  -->
-        <form action="../index.php" method="post">
+        <form action="index.php" method="post">
             <!-- Identifiant -->
             <div class="row">
                 <span class="fa fa-user fa-3x"></span>

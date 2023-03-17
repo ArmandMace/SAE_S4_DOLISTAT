@@ -22,8 +22,8 @@
         public function buildControllerByName(string $controller_name): mixed
         {
             return match ($controller_name) {
-                "Home" => $this->buildHomeController(),
-                "Login" => $this->buildLoginController(),
+                "home" => $this->buildHomeController(),
+                "login" => $this->buildLoginController(),
                 default => throw new NoControllerAvailableForName($controller_name)
             };
         }
