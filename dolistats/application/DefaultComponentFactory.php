@@ -22,7 +22,7 @@
         public function buildControllerByName(string $controller_name): mixed
         {
             return match ($controller_name) {
-                "home" => $this->buildHomeController(),
+                "Home" => $this->buildHomeController(),
                 "login" => $this->buildLoginController(),
                 default => throw new NoControllerAvailableForName($controller_name)
             };
