@@ -157,3 +157,50 @@ input[type=text]::placeholder {
 .paddingRight {
 	padding-right:20px;
 }
+.paddingBottom {
+	padding-bottom:20px;
+}
+.paddingTop {
+	padding-top:20px;
+}
+.center {
+	text-align:center;
+}
+
+/* Mise en gras des titre H1 */
+h1 {
+	font-weight:bold;
+}
+
+/* Centrage du graphique */
+.centerGraph{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.critereGrille {
+	background-color:#C0C3CB;
+	border:2px solid #C0C3CB;
+}
+
+.uppercase {
+	text-transform:uppercase;
+	font-size:28px;
+}
+.miniText {
+	font-size:20px;
+	font-style:italic;
+}
+
+/* Bouton "Valider" */
+.btnValid {
+	background-color:#263C5C;
+	width:150px;
+	height:60px;
+	font-weight:bold;
+	text-align:center;
+	font-size:26px;
+	color:white;
+	text-transform:uppercase;
+}
