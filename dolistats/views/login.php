@@ -2,22 +2,22 @@
 <html lang="eng">
 <head>
     <meta charset="UTF-8">
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="../fontawesome-free-5.10.2-web/css/all.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css">
+        <link rel="stylesheet" href="css/style.css">
     <title>Login</title>
 </head>
-<body>
+<body class="bodyIndex">
 
 <?php
     require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
 
     use yasmf\HttpHelper;
 ?>
-    <div class="container">
+    <div class="container-fluid container-i">
         <!-- Titre : DoliStats -->
         <div class="row">
-            <div class="col-md-12 col-sm-12 xs-12 titre">DoliStats</div>
+            <div class="col-md-12 col-sm-12 col-xs-12 titre">DoliStats</div>
         </div>
         <!--  -->
         <form action="index.php" method="post">

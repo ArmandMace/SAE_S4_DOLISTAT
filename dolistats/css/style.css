@@ -9,9 +9,9 @@
 	font-family: 'Roboto';
 }
 
-.container {
+.container-i {
 	margin-top:200px;
-	width:600px;
+	width:800px;
 	height:500px;
 	background-color:white;
 	box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.3);
@@ -19,6 +19,7 @@
 	text-align:center;
 	padding:10px;
 }
+
 .row {
 	padding:20px;
 }

@@ -1,5 +1,5 @@
 <?php
-    const PREFIX_TO_RELATIVE_PATH = "/dolistats"; // Constante du dossier de l'application
+    const PREFIX_TO_RELATIVE_PATH = "/SAE_S4_DOLISTAT/dolistats"; // Constante du dossier de l'application
     require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php"; // Appel de la classe autoload
 
     use application\DefaultComponentFactory;
