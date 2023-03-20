@@ -57,18 +57,16 @@
 
 				<!-- case utilisateur en offset -->
 				<div class="col-md-1 col-md-offset-6 col-xs-2">
-					<h2 class="titre-navbar">
-						<span class="fa fa-user fa-2x"></span><br/><br/>
-						Déconnexion 
-					</h2>
+					<form action="accueilMedecin.php" method="post">
 				</div>
 			</div>
 			<!-- Fin de la navbar -->
 			
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-sm-12">
-					<div class="bigDolistats">Dolistats</div>
-				</div>
+			<!-- Case utilisateur + déconnexion en offset -->
+			<div class="col-md-1 col-md-offset-6 col-xs-2">
+				<form action="accueilMedecin.php" method="post">
+					<button type="submit" class="btn btn-circle btn-xxl" name="deconnexion" value="true" title="Déconnexion"><span class="fas fa-power-off">  Déconnexion</button>
+				</form>
 			</div>
 		</div>
 	</body>
