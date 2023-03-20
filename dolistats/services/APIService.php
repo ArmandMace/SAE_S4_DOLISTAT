@@ -37,7 +37,7 @@
             curl_close($curl);
 
             if ($http_status == "200") {
-                return json_decode($result, true);
+                return json_decode($result, false);
             } else {
                 return [];
             }

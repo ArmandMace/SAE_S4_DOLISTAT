@@ -24,7 +24,8 @@
             <!-- Identifiant -->
             <div class="row">
                 <span class="fa fa-user fa-3x"></span>
-                <input type="text" name="login" placeholder="Identifiant" class="authentification">
+                <input type="text" name="login" placeholder="Identifiant" class="authentification"
+                       value="<?php if (isset($login)) { echo $login; } ?>">
             </div>
             <!-- Mot de passe -->
             <div class="row">

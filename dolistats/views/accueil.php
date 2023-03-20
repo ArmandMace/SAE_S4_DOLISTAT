@@ -2,9 +2,9 @@
 	<head>
 		<meta charset='utf-8'>
 		<title>Accueil</title>
-		<link rel="stylesheet" href="../css/style.css"/>
-		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
-		<link rel="stylesheet" href="../fontawesome-free-5.10.2-web/css/all.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
 	</head>
 	<body class="bodyPage">
 		<div class="container-fluid">

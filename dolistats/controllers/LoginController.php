@@ -22,17 +22,18 @@
          */
         public function connexion() : View
         {
-            $login = HttpHelper::getParam("login");
-            $password = HttpHelper::getParam("password");
-            $infoConnexion = $this->apiService->login($login, $password);
+            $login = htmlspecialchars(HttpHelper::getParam("login"));
+            $password = htmlspecialchars(HttpHelper::getParam("password"));
+            $dataJson = $this->apiService->login($login, $password);
 
-            if($infoConnexion == []) {
+            if($dataJson == []) {
                 $view = new View("views/login");
                 $view->setVar("login", $login);
             } else {
                 session_start();
+                $data = $dataJson->success;
                 $_SESSION["identifiant"] = $login;
-                $_SESSION["token"] = $infoConnexion->{"token"};
+                $_SESSION["token"] = $data->token;
                 $view = new View("views/accueil");
             }
             return $view;
