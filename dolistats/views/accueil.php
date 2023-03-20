@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 	<head>
 		<meta charset='utf-8'>
@@ -7,6 +8,9 @@
 		<link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
 	</head>
 	<body class="bodyPage">
+    <?php
+        require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
+    ?>
 		<div class="container-fluid">
 			<!-- navbar -->
 			<div class="row navbar">
@@ -57,17 +61,13 @@
 
 				<!-- case utilisateur en offset -->
 				<div class="col-md-1 col-md-offset-6 col-xs-2">
-					<form action="accueilMedecin.php" method="post">
+					<form action="index.php" method="post">
+                        <button type="submit" class="btn btn-circle btn-xxl"><span class="fas fa-power-off">  Déconnexion</button>
+                        <input type="hidden" name="controller" value="login">
+                        <input type="hidden" name="action" value="deconnexion">
 				</div>
 			</div>
 			<!-- Fin de la navbar -->
-			
-			<!-- Case utilisateur + déconnexion en offset -->
-			<div class="col-md-1 col-md-offset-6 col-xs-2">
-				<form action="accueilMedecin.php" method="post">
-					<button type="submit" class="btn btn-circle btn-xxl" name="deconnexion" value="true" title="Déconnexion"><span class="fas fa-power-off">  Déconnexion</button>
-				</form>
-			</div>
 		</div>
 	</body>
 </html>

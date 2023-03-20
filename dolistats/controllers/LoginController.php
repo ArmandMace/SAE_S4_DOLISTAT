@@ -30,7 +30,6 @@
                 $view = new View("views/login");
                 $view->setVar("login", $login);
             } else {
-                session_start();
                 $data = $dataJson->success;
                 $_SESSION["identifiant"] = $login;
                 $_SESSION["token"] = $data->token;
@@ -38,6 +37,12 @@
             }
             return $view;
 
+        }
+
+        public function deconnexion() : View
+        {
+            session_destroy();
+            return new View("views/login");
         }
 
     }
