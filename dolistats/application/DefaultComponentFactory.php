@@ -3,6 +3,7 @@
 
     use controllers\HomeController;
     use controllers\LoginController;
+    use controllers\RechercheArticleController;
     use services\APIService;
     use yasmf\ComponentFactory;
     use yasmf\NoControllerAvailableForName;
@@ -24,6 +25,7 @@
             return match ($controller_name) {
                 "Home" => $this->buildHomeController(),
                 "login" => $this->buildLoginController(),
+                "rechercheArticle" => $this->buildRechercheArticleController(),
                 default => throw new NoControllerAvailableForName($controller_name)
             };
         }
@@ -55,6 +57,14 @@
         public function buildLoginController(): LoginController
         {
             return new LoginController($this->buildAPIService());
+        }
+
+        /**
+         * @return LoginController
+         */
+        public function buildRechercheArticleController(): RechercheArticleController
+        {
+            return new RechercheArticleController($this->buildAPIService());
         }
 
         /**

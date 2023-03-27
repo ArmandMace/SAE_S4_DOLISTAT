@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../../../../Users/Mathy/Documents/Uwamp_2020/www/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="../../../../../Users/Mathy/Documents/Uwamp_2020/www/fontawesome-free-5.10.2-web/css/all.css">
-        <link rel="stylesheet" href="../../../../../Users/Mathy/Documents/Uwamp_2020/www/Vues%20Dolistats/css/style.css">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
         <title>Recherche_client</title>
     </head>
     <body>

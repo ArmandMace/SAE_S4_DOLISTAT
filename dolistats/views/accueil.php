@@ -22,6 +22,13 @@
 						</h2>
 					</a>
 				</div>
+                <div class="col-md-1 col-md-offset-6 col-xs-2">
+                    <form action="index.php" method="post">
+                        <button type="submit" class="btn btn-circle btn-xxl"><span class="fas fa-power-off">  Déconnexion</button>
+                        <input type="hidden" name="controller" value="rechercheArticle">
+                        <input type="hidden" name="action" value="index">
+                    </form>
+                </div>
 
 				<div class="col-md-1 col-xs-2">
 					<a href="rechercheClient.php">
@@ -65,6 +72,7 @@
                         <button type="submit" class="btn btn-circle btn-xxl"><span class="fas fa-power-off">  Déconnexion</button>
                         <input type="hidden" name="controller" value="login">
                         <input type="hidden" name="action" value="deconnexion">
+                    </form>
 				</div>
 			</div>
 			<!-- Fin de la navbar -->
