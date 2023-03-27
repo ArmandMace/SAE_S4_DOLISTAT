@@ -21,42 +21,42 @@
                         <div class="titre-navbar"> Recherche Article </div>
                     </a>
                 </div>
-                
+
                 <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
                     <a href="recherche_client.html">
                         <div><span class="fa fa-search"> </span> </div>
                         <div class="titre-navbar"> Recherche Client </div>
                     </a>
                 </div>
-                
+
                 <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
                     <a href="palmares_article.html">
                         <div><span class="fa fa-chart-pie"> </span> </div>
                         <div class="titre-navbar"> Palmarès Article </div>
                     </a>
                 </div>
-                
+
                 <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
                     <a href="palmares_client.html">
                         <div><span class="fa fa-chart-pie"> </span> </div>
                         <div class="titre-navbar"> Palmarès Client </div>
                     </a>
                 </div>
-                
+
                 <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
                     <a href="palmares_client.html">
                         <div><span class="fa fa-money-bill"> </span> </div>
                         <div class="titre-navbar"> Chiffre d'Affaire </div>
                     </a>
                 </div>
-                
+
                 <!-- case utilisateur en offset -->
-                <div class="flex-column flex-gap-5 col-md-1 col-md-offset-6 col-xs-2">
-                    <a href="palmares_client.html">
-                        <div><span class="fa fa-user"> </span> </div>
-                        <div class="titre-navbar"> Deconexion </div>
-                    </a>
-                </div>
+                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-2 col-md-offset-5 col-xs-2">
+                    <button type="submit" class="btn-blanc"> <span class="fas fa-power-off"> <br>Déconnexion</button>
+                    <input type="hidden" name="controller" value="login">
+                    <input type="hidden" name="action" value="deconnexion">
+                </form>
+
             </div>
             <!-- Fin de la navbar -->
 
