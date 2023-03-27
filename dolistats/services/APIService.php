@@ -1,13 +1,13 @@
 <?php
     namespace services;
 
+    use yasmf\HttpHelper;
+
     /**
      * The APIService class
      */
     class APIService
     {
-        const urlApi = "http://dolibarr.iut-rodez.fr/G2022-61/htdocs/api/index.php/";
-
         /**
          * @param $url
          * @return \CurlHandle|false
@@ -27,9 +27,9 @@
          * @param $mdp
          * @return array|mixed
          */
-        function login($id, $mdp)
+        function login($id, $mdp, $url): mixed
         {
-            $urlLogin = APIService::urlApi . "login?login=" . $id . "&password=" . $mdp;
+            $urlLogin = $url . "login?login=" . $id . "&password=" . $mdp;
             $curl = $this->createCurl($urlLogin);
 
             $result = curl_exec($curl);

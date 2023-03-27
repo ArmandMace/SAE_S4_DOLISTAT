@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="eng">
 <head>
@@ -30,6 +29,10 @@
             <div class="row">
                 <span class="fa fa-lock fa-3x"></span>
                 <input type="text" name="password" placeholder="Mot de passe"class="authentification">
+            </div>
+            <div class="row">
+                <span class="fa fa-link fa-3x"></span>
+                <input type="text" name="url" placeholder="URL de connexion" class="authentification">
             </div>
             <!-- Bouton "Se connecter" -->
             <div class="row">

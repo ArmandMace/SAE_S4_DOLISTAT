@@ -5,7 +5,6 @@
     use yasmf\httpHelper;
     use services\APIService;
 
-
     class LoginController
     {
         private APIService $apiService;
@@ -13,6 +12,14 @@
         public function __construct(APIService $apiService)
         {
             $this->apiService = $apiService;
+        }
+
+        /**
+         * @return view login
+         */
+        public function index() : View
+        {
+            return new View("views/login");
         }
 
         /**
@@ -24,15 +31,18 @@
         {
             $login = htmlspecialchars(HttpHelper::getParam("login"));
             $password = htmlspecialchars(HttpHelper::getParam("password"));
-            $dataJson = $this->apiService->login($login, $password);
+            $url = htmlspecialchars(httpHelper::getParam("url"));
+            $dataJson = $this->apiService->login($login, $password, $url);
 
             if($dataJson == []) {
                 $view = new View("views/login");
                 $view->setVar("login", $login);
             } else {
-                $data = $dataJson->success;
                 $_SESSION["identifiant"] = $login;
+                $data = $dataJson->success;
                 $_SESSION["token"] = $data->token;
+                $_SESSION["url"] = $url;
+                var_dump($_SESSION);
                 $view = new View("views/accueil");
             }
             return $view;
@@ -41,6 +51,7 @@
 
         public function deconnexion() : View
         {
+            session_start();
             session_destroy();
             return new View("views/login");
         }
