@@ -3,6 +3,10 @@
 
     use controllers\HomeController;
     use controllers\LoginController;
+    use controllers\PalmaresArticleController;
+    use controllers\PalmaresClientController;
+    use controllers\RechercheArticleController;
+    use controllers\RechercheClientController;
     use services\APIService;
     use yasmf\ComponentFactory;
     use yasmf\NoControllerAvailableForName;
@@ -24,6 +28,10 @@
             return match ($controller_name) {
                 "Home" => $this->buildHomeController(),
                 "login" => $this->buildLoginController(),
+                "rechercheArticle" => $this->buildRechercheArticleController(),
+                "rechercheClient" => $this->buildRechercheClientController(),
+                "palmaresArticle" => $this->buildPalmaresArticleController(),
+                "palmaresClient" => $this->buildPalmaresClientController(),
                 default => throw new NoControllerAvailableForName($controller_name)
             };
         }
@@ -55,6 +63,38 @@
         public function buildLoginController(): LoginController
         {
             return new LoginController($this->buildAPIService());
+        }
+
+        /**
+         * @return RechercheArticleController
+         */
+        public function buildRechercheArticleController(): RechercheArticleController
+        {
+            return new RechercheArticleController($this->buildAPIService());
+        }
+
+        /**
+         * @return RechercheClientController
+         */
+        public function buildRechercheClientController(): RechercheClientController
+        {
+            return new RechercheClientController($this->buildAPIService());
+        }
+
+        /**
+         * @return PalmaresArticleController
+         */
+        public function buildPalmaresArticleController(): PalmaresArticleController
+        {
+            return new PalmaresArticleController($this->buildAPIService());
+        }
+
+        /**
+         * @return PalmaresClientController
+         */
+        public function buildPalmaresClientController(): PalmaresClientController
+        {
+            return new PalmaresClientController($this->buildAPIService());
         }
 
         /**
