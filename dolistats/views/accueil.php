@@ -34,7 +34,7 @@
 				</div>
 
 				<div class="col-md-1 col-xs-2">
-					<a href="palmaresArticle.php">
+					<a href="palmares_article.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-chart-pie fa-2x"></span><br/><br/>
 							Palmarès Article 
@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="col-md-1 col-xs-2">
-					<a href="palmaresClient.php">
+					<a href="palmares_client.php">
 						<h2 class="titre-navbar">
 							<span class="fa fa-chart-pie fa-2x"></span><br/><br/>
 							Palmarès Client 

@@ -4,9 +4,9 @@
     use yasmf\HttpHelper;
 
     /**
-     * The APIService class
+     * The apiservice class
      */
-    class APIService
+    class apiservice
     {
         /**
          * @param $url

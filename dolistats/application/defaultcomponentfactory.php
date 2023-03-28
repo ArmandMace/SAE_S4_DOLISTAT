@@ -1,10 +1,10 @@
 <?php
     namespace application;
 
-    use controllers\HomeController;
-    use controllers\LoginController;
-    use controllers\RechercheArticleController;
-    use services\APIService;
+    use controllers\homecontroller;
+    use controllers\logincontroller;
+    use controllers\recherchearticlecontroller;
+    use services\apiservice;
     use yasmf\ComponentFactory;
     use yasmf\NoControllerAvailableForName;
     use yasmf\NoServiceAvailableForName;
@@ -12,8 +12,8 @@
     /**
      * The controller Factory
      */
-    class DefaultComponentFactory implements ComponentFactory {
-        private ?APIService $apiService = null;
+    class defaultcomponentfactory implements ComponentFactory {
+        private ?apiservice $apiService = null;
 
         /**
          * @param string $controller_name name of the controller to instantiate
@@ -44,36 +44,36 @@
         }
 
         /**
-         * @return HomeController
+         * @return homecontroller
          */
-        public function buildHomeController(): HomeController
+        public function buildHomeController(): homecontroller
         {
-            return new HomeController();
+            return new homecontroller();
         }
 
         /**
-         * @return LoginController
+         * @return logincontroller
          */
-        public function buildLoginController(): LoginController
+        public function buildLoginController(): logincontroller
         {
-            return new LoginController($this->buildAPIService());
+            return new logincontroller($this->buildAPIService());
         }
 
         /**
-         * @return LoginController
+         * @return recherchearticlecontroller
          */
-        public function buildRechercheArticleController(): RechercheArticleController
+        public function buildRechercheArticleController(): recherchearticlecontroller
         {
-            return new RechercheArticleController($this->buildAPIService());
+            return new recherchearticlecontroller($this->buildAPIService());
         }
 
         /**
-         * @return APIService
+         * @return apiservice
          */
-        public function buildAPIService(): APIService
+        public function buildAPIService(): apiservice
         {
             if ($this->apiService == null) {
-                $this->apiService = new APIService();
+                $this->apiService = new apiservice();
             }
             return $this->apiService;
         }

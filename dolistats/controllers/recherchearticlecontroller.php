@@ -3,13 +3,13 @@ namespace controllers;
 
 use yasmf\view;
 use yasmf\httpHelper;
-use services\APIService;
+use services\apiservice;
 
-class RechercheArticleController
+class recherchearticlecontroller
 {
-    private APIService $apiService;
+    private apiservice $apiService;
 
-    public function __construct(APIService $apiService)
+    public function __construct(apiservice $apiService)
     {
         $this->apiService = $apiService;
     }

@@ -3,14 +3,14 @@
 
     use yasmf\View;
 
-    class HomeController
+    class homecontroller
     {
         /**
          * @return View
          */
         public function index(): View
         {
-            return new View("/views/url");
+            return new View("/views/login");
         }
     }
 

@@ -3,13 +3,13 @@
 
     use yasmf\view;
     use yasmf\httpHelper;
-    use services\APIService;
+    use services\apiservice;
 
-    class LoginController
+    class logincontroller
     {
-        private APIService $apiService;
+        private apiservice $apiService;
 
-        public function __construct(APIService $apiService)
+        public function __construct(apiservice $apiService)
         {
             $this->apiService = $apiService;
         }
@@ -42,7 +42,6 @@
                 $data = $dataJson->success;
                 $_SESSION["token"] = $data->token;
                 $_SESSION["url"] = $url;
-                var_dump($_SESSION);
                 $view = new View("views/accueil");
             }
             return $view;
