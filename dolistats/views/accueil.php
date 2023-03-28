@@ -23,7 +23,7 @@
                         <div><span class="fa fa-search"> </span> </div>
                         <div class="titre-navbar"> Recherche Article </div>
                     </button>
-                    <input type="hidden" name="controller" value="rechercheArticle">
+                    <input type="hidden" name="controller" value="recherchearticle">
                     <input type="hidden" name="action" value="index">
                 </form>
 
@@ -32,7 +32,7 @@
                         <div><span class="fa fa-search"> </span> </div>
                         <div class="titre-navbar"> Recherche Client </div>
                     </button>
-                    <input type="hidden" name="controller" value="rechercheClient">
+                    <input type="hidden" name="controller" value="rechercheclient">
                     <input type="hidden" name="action" value="index">
                 </form>
 
@@ -41,7 +41,7 @@
                         <div><span class="fa fa-chart-pie"> </span> </div>
                         <div class="titre-navbar"> Palmarès Article </div>
                     </button>
-                    <input type="hidden" name="controller" value="palmaresArticle">
+                    <input type="hidden" name="controller" value="palmaresarticle">
                     <input type="hidden" name="action" value="index">
                 </form>
 
@@ -50,7 +50,7 @@
                         <div><span class="fa fa-chart-pie"> </span> </div>
                         <div class="titre-navbar"> Palmarès Client </div>
                     </button>
-                    <input type="hidden" name="controller" value="palmaresClient">
+                    <input type="hidden" name="controller" value="palmaresclient">
                     <input type="hidden" name="action" value="index">
                 </form>
 
