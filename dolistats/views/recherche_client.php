@@ -105,7 +105,15 @@
                             <h2 class="txt-liste"> Ville </h2>
                         </div>
                         <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                            <h2 class="txt-liste">
+                                <form action="index.php" method="post" class="flex-column">
+                                    <button type="submit" class="btn-transparent">
+                                        <div><span class="fa fa-eye"> </span> </div>
+                                    </button>
+                                    <input type="hidden" name="controller" value="rechercheClient">
+                                    <input type="hidden" name="action" value="ficheClient">
+                                </form>
+                            </h2>
                         </div>
                     </div>
 

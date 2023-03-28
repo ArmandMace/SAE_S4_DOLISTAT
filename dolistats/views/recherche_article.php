@@ -95,12 +95,20 @@
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
                             <h2 class="txt-liste"> Nom Article </h2>
-                        </div> 
+                        </div>
                         <div class="col-sm-2 col-xs-3">
                             <h2 class="txt-liste"> Référence </h2>
                         </div>
                         <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                            <h2 class="txt-liste">
+                                <form action="index.php" method="post" class="flex-column">
+                                    <button type="submit" class="btn-transparent">
+                                        <div><span class="fa fa-eye"> </span> </div>
+                                    </button>
+                                    <input type="hidden" name="controller" value="rechercheArticle">
+                                    <input type="hidden" name="action" value="ficheArticle">
+                                </form>
+                            </h2>
                         </div>
                     </div>
 
