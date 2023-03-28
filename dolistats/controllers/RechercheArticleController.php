@@ -20,5 +20,10 @@ class RechercheArticleController
     public function index() : View {
         return new view("views/recherche_article");
     }
+
+    public function ficheArticle() : View
+    {
+        return new view("views/fiche_article");
+    }
 }
 
