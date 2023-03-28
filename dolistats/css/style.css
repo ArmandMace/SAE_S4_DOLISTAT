@@ -1,207 +1,245 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.bodyIndex {
-	background-color:#C0C3CB;
-	font-family: 'Roboto';
-}
-.bodyPage {
-	background-color:#ECEFF7;
-	font-family: 'Roboto';
+/* body */
+.body-login {
+    background-color:#C0C3CB;
+    font-family: 'Roboto', sans-serif;
 }
 
-.container-i {
-	margin-top:200px;
-	width:800px;
-	height:500px;
-	background-color:white;
-	box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.3);
-	border-radius:10px;
-	text-align:center;
-	padding:10px;
+.body-classic {
+    font-family: 'Roboto', sans-serif;
+    background-color:#ECEFF7;
 }
 
-.row {
-	padding:20px;
+/* Login Screen */
+.login-screen {
+    margin-top: 10%;
+    padding: 30px;
+    width: 35%;
+    background-color:white;
+    box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.3);
+    border-radius:10px;
 }
-/* Titre : DoliStats */
-.titre {
-	font-family: 'Baloo 2';
-	font-weight:bold;
-	font-size:70px;
-	text-align:center;
+
+.login-input {
+    border: none;
+    border-bottom:1px solid #C0C3CB;
+    font-size:20px;
+    margin:15px;
 }
-/* Champs de saisie */
-.authentification {
-	border: none;
-	border-bottom:1px solid #C0C3CB;
-	font-size:20px;
-	margin:15px;
+
+/* Utility */
+.center { text-align: center; }
+.right { text-align: right; }
+.height-55 { height: 55px; }
+.height-85 { height: 85px; }
+.height-100 { height: 100px;}
+.height-150 { height: 150px;}
+.padding-top-5 { padding-top: 5px; }
+.padding-bottom-5 { padding-bottom: 5px; }
+.padding-top-20 { padding-top: 20px; }
+.padding-top-50 { padding-top: 50px; }
+.padding-edge-20 { padding-right: 20px; padding-left: 20px; }
+.margin-0 { margin: 0px; }
+
+
+/* Flex class */
+.flex-row {
+    display: flex;
+    flex-direction: row;
 }
-/* Placeholder */
-input[type=text]::placeholder {
-   font-weight:italic;
-   color:#C0C3CB;
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
-/* Bouton "Se connecter" */
-.btnConnect {
-	background-color:#ECEFF7;
-	width:180px;
-	height:45px;
-	font-weight:bold;
-	text-align:center;
-	font-size:20px;
-	text-transform:uppercase;
+
+.flex-align-items-center { align-items: center; }
+.flex-justify-center { justify-content: center; }
+.flex-justify-space-between { justify-content: space-between; }
+.flex-gap-30 { gap: 30px; }
+.flex-gap-20 { gap: 20px; }
+.flex-gap-5 { gap: 5px; }
+.flex-gap-0 { gap: 0px; }
+
+
+/* titres */
+.titre-dolistats {
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.titre-navbar {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.titre-en-tete {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(48, 148, 150);
+}
+
+.titre-liste-facture {
+    font-size: 18px;
+    color: rgb(48, 148, 150);
+    border-bottom: 1px solid #C0C3CB;
+}
+
+/* txt */
+.txt-liste-bold {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.txt-classic {
+    font-size: 14px;
+}
+
+/* btn */
+.btn-connexion {
+    background-color:#ECEFF7;
+    width:180px;
+    height:45px;
+    font-weight:bold;
+    font-size:20px;
+    border-radius: 5px;
+}
+
+.btn-vert {
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    border: 2px solid #2aa2a6;
+    border-radius: 5px;
+    background-color: #2aa683;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-blanc {
+    font-weight: bold;
+    font-size: 14px;
+    color: #C0C3CB;
+    border: 2px solid #C0C3CB;
+    border-radius: 5px;
+    background-color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: transparent ;
+}
+
+.btn-TOP {
+    width:100px;
+    height:40px;
+    background-color:#C0C3CB;
+    color:white;
+    font-size:20px;
+    border: solid #8c8c8c 1px;
+}
+
+.btn-TOP-x {
+    width:50px;
+    height:40px;
+    background-color:#C0C3CB;
+    color:white;
+    font-size:20px;
+    border: none;
+    border-bottom: solid #8c8c8c 1px;
+    border-left: solid #8c8c8c 1px;
+    border-top: solid #8c8c8c 1px;
+}
+
+.btn-TOP-blank {
+    width:50px;
+    height:40px;
+    background-color:white;
+    color:#3c3c3c;
+    font-size:20px;
+    text-align: center;
+    border-bottom: solid #8c8c8c 1px;
+    border-left: none;
+    border-right: solid #8c8c8c 1px;
+    border-top: solid #8c8c8c 1px;
 }
 
 /* Navbar */
 .navbar {
-    text-align:center;
+    text-align: center;
     background-color:#263c5c;
     color:#FFFFFF;
-    font-weight:bold;
     border-radius: 0%;
-	padding:20px;
-}
-.titre-navbar {
-    font-size: 14px;
 }
 
-/* Grand titre accueil */
-.bigDolistats {
-	font-family:'Baloo 2';
-	font-weight:bold;
-	font-size:160px;
-	text-align:center;
-	text-transform:center;
-	color:white;
-	padding-top:200px;
-	text-transform:uppercase;
+/* Searchbar */
+.searchbar {
+    display: flex;
+    height: 150px;
+    align-items: center;
 }
 
-/* Boutons top*/
-.btnTop {
-	width:125px;
-	height:72px;
-	background-color:#C0C3CB;
-	color:white;
-	font-size:32px;
-	text-transform:uppercase;
-	text-align:center;
-	border:none;
+.search-element {
+    height: 50px;
 }
 
-/* Boutons top*/
-.btnPetitTop {
-	width:75px;
-	height:72px;
-	background-color:#C0C3CB;
-	color:white;
-	font-size:28px;
-	text-transform:uppercase;
-	text-align:center;
-	border:none;
+.search-area {
+    font-size: 17px;
 }
 
-/* Champs de saisie Top... */
-.saisieTop {
-	width:75px;
-	height:72px;
-	background-color:white;
-	color:#ECEFF7;
-	font-size:28px;
-	text-transform:uppercase;
-	text-align:center;
-	border:1px solid #C0C3CB;
+.search-button {
+    text-align:center;
+    background-color:#C0C3CB;
+    color:#FFFFFF;
+    font-size: 20px;
+    padding-top: 7px;
+    border: transparent;
 }
 
-/* Labels "Période du" et " au "*/
-.labelText {
-	font-size:32px;
-	margin-left:10px;
-	margin-right:10px;
+/* En tête (fiche article/client) */
+.entete {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    border-top : 1px solid #C0C3CB;
+    border-bottom: 1px solid #C0C3CB;
 }
 
-/* Champs de saisie des périodes*/
-.saisiePeriode {
-	width:224px;
-	height:78px;
-	background:white;
-	border:1px solid #C0C3CB;
-}
-.saisiePeriode:placeholder {
-		font-size:26px;
-		font-weight:italic;
+/* special */
+.date {
+    width:200px;
+    height:30px;
+    background:white;
+    border:1px solid #C0C3CB;
 }
 
-/* GRaphique camembert */
-.pieChart {
-	margin-top: 30px;
-	width: 400px;
-	height: 400px;
-	border-radius: 50%;
-	background-image: conic-gradient(
-		pink 70deg, 
-		skyblue 0 235deg, 
-		lightsalmon 0);
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border: 1px black;
+    box-shadow: 2px 2px 8px black;
+    padding: 10px;
 }
 
-/* Formatage des lignes du tableau */
+/* liste fiche (article/client) */
 .ligne {
-	border-bottom:1px solid black;
-	font-size:26px;
-	margin-top:10px;
+    border-bottom: 1px solid #C0C3CB
 }
 
-.paddingLeft {
-	padding-left:20px;
-}
-.paddingRight {
-	padding-right:20px;
-}
-.paddingBottom {
-	padding-bottom:20px;
-}
-.paddingTop {
-	padding-top:20px;
-}
-.center {
-	text-align:center;
-}
-
-/* Mise en gras des titre H1 */
-h1 {
-	font-weight:bold;
-}
-
-/* Centrage du graphique */
-.centerGraph{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.critereGrille {
-	background-color:#C0C3CB;
-	border:2px solid #C0C3CB;
-}
-
-.uppercase {
-	text-transform:uppercase;
-	font-size:28px;
-}
-.miniText {
-	font-size:20px;
-	font-style:italic;
-}
-
-/* Bouton "Valider" */
-.btnValid {
-	background-color:#263C5C;
-	width:150px;
-	height:60px;
-	font-weight:bold;
-	text-align:center;
-	font-size:26px;
-	color:white;
-	text-transform:uppercase;
+/* footer */
+footer {
+    height: 150px;
 }

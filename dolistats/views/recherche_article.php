@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style2.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
         <title>Recherche_article</title>
     </head>
-    <body>
+    <body class="body-classic">
     <?php
         require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
@@ -87,20 +87,20 @@
 
 
             <!-- Liste article -->
-            <div class="row liste-element">
+            <div class="row">
 
                 <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div>
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste">
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold">
                                 <form action="index.php" method="post" class="flex-column">
                                     <button type="submit" class="btn-transparent">
                                         <div><span class="fa fa-eye"> </span> </div>
@@ -115,156 +115,156 @@
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Nom Article </h2>
+                            <h2 class="txt-liste-bold"> Nom Article </h2>
                         </div> 
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                            <h2 class="txt-liste"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
+                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 right">
+                            <h2 class="txt-liste-bold"><a href="fiche_article.html"><span class="fa fa-eye"></span></a></h2>
                         </div>
                     </div>
 
@@ -272,11 +272,8 @@
                 </div>
             </div>
             <!-- fin liste article -->
-
-
-
-            <!-- footer -->
-            <footer> </footer>
         </div>
+        <!-- footer -->
+        <footer> </footer>
     </body>
 </html>

@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 		<link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
 	</head>
-	<body class="bodyPage">
+	<body class="body-classic">
     <?php
         require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
@@ -72,118 +72,300 @@
 
             </div>
             <!-- Fin de la navbar -->
-			
-			<!-- Critères d'affichage -->
-			<div class="row">
-				<!-- Boutons TOP -->
-				<div class="paddingBottom col-md-3 col-sm-12 col-xs-12">
-					<input type="button" name="top10" value="TOP 10" class="btnTop">
-					<input type="button" name="top20" value="TOP 20" class="btnTop">
-					<input type="button" name="top" value="TOP" class="btnPetitTop">
-					<input type="text" name="top" placeholder="..." class="saisieTop">
-				</div>
-				<!-- Période -->
-				<div class="col-md-4 col-sm-12 col-xs-12">
-					<label class="labelText">Période du </label>
-					<input type="text" name="debut" placeholder="10/01/2020" class="saisiePeriode">
-					<label class="labelText"> au </label>
-					<input type="text" name="fin" placeholder="10/01/2021" class="saisiePeriode">
-				</div>
-			</div>
 
-			<!-- Résultats -->
-			<div class="row">
-				<div class="col-md-6 col-sm-12 col-xs-12 center">
-					<h1>Graphique</h1>
-					  <div class="centerGraph">
-							<div class="pieChartClient"></div>
-					  </div>
-				</div>
-				<div class="col-md-6 col-sm-12 col-xs-12 paddingRight">
-					<div class="col-xs-10">
-						<h1 class="center">Résultats</h1>
-					<div class="row ">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">1</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">2</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">3</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">4</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">5</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">6</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">7</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">8</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">9</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 ligne">
-							<div class="col-md-1 col-sm-1 col-xs-1">10</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">NOM Prénom CP Ville</div>
-							<div class="col-md-3 col-sm-3 col-xs-3">CA</div>
-						</div>
-						<div class="col-xs-2"></div>
-					</div>
-				</div>
-			</div>
+
+
+            <!-- Page -->
+            <div class="row">
+
+                <!-- GAUCHE - Graphique + critère -->
+                <div class="col-md-6 col-sm-12 col-xs-12">
+
+                    <!-- Critères d'affichage -->
+                    <div class="row height-150 flex-row flex-align-items-center">
+
+                        <!-- Boutons TOP -->
+                        <div class="col-md-6">
+
+                            <!-- TOP 10 -->
+                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-TOP">
+                                    <div> TOP 10 </div>
+                                </button>
+                                <input type="hidden" name="controller" value="palmaresclient">
+                                <input type="hidden" name="action" value="top10">
+                            </form>
+
+                            <!-- TOP 20 -->
+                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-TOP">
+                                    <div> TOP 20 </div>
+                                </button>
+                                <input type="hidden" name="controller" value="palmaresclient">
+                                <input type="hidden" name="action" value="top20">
+                            </form>
+
+                            <!-- TOP x -->
+                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12 flex-row flex-gap-0">
+                                <button type="submit" class="btn-TOP-x">
+                                    <div> TOP </div>
+                                </button>
+                                <input type="text" name="top" class="btn-TOP-blank">
+                                <input type="hidden" name="controller" value="palmaresclient">
+                                <input type="hidden" name="action" value="topx">
+                            </form>
+                        </div>
+
+                        <!-- Période -->
+                        <div class="col-md-6 flex-column flex-align-items-center flex-gap-5">
+                            <div class="txt-liste-bold"> Période du </div>
+                            <input type="date" min="2000-01-01"  max="2100-01-01" class="date">
+                            <div class="txt-liste-bold"> au </div>
+                            <input type="date" min="2000-01-01"  max="2100-01-01" class="date">
+                        </div>
+                    </div>
+                    <!-- fin des crière d'affichage -->
+
+                    <!-- GRAPHIQUE -->
+                    <div class="row titre-en-tete center padding-top-50"> Graphique </div>
+
+                    <!-- contenu -->
+
+                </div>
+
+                <!-- DROITE - Liste des résultats -->
+                <div class="col-md-6 col-sm-12 col-xs-12">
+
+                    <!-- titre -->
+                    <div class="row titre-en-tete center padding-top-20"> Résultats </div>
+
+                    <!-- liste -->
+                    <div class="flex-column padding-top-20 padding-edge-20">
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 1 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 2 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 3 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 4 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 5 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 6 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 7 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 8 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 9 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+
+                        <!-- ligne -->
+                        <div class="row ligne center">
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> 10 </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> NOM </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Prénom </h2>
+                            </div>
+                            <div class="col-xs-1">
+                                <h2 class="txt-classic"> CP </h2>
+                            </div>
+                            <div class="col-xs-2">
+                                <h2 class="txt-classic"> Ville </h2>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-classic"> CA </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
+        <!-- footer -->
+        <footer> </footer>
 	</body>
 </html>

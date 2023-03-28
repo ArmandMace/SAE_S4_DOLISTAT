@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style2.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
         <title>Recherche_article</title>
     </head>
-    <body>
+    <body class="body-classic">
     <?php
         require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
@@ -82,10 +82,10 @@
 
                     <!-- en tete -->
                     <div class="row entete">
-                        <div class="col-md-2 flex-row flex-justify-center"> <img class="img" src="../img/produit_vide.png"> </div>
+                        <div class="col-md-2 flex-row flex-justify-center"> <img class="img" src="img/produit_vide.png"> </div>
                         <div class="col-md-7 flex-column flex-justify-space-between height-55"> 
                             <div class="titre-en-tete"> Ref. </div>
-                            <div class="texte-en-tete"> Libellé </div>
+                            <div class="txt-classic"> Libellé </div>
                         </div>
                         <div class="col-md-3 flex-column flex-justify-space-between height-100">
                             <div class="titre-en-tete center"> <a href="recherche_article.html"> Retour liste </a></div>
@@ -142,11 +142,8 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- footer -->
-            <footer> </footer>
         </div>
+        <!-- footer -->
+        <footer> </footer>
     </body>
 </html>

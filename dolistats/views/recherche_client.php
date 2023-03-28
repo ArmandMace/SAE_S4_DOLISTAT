@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style2.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
         <title>Recherche_client</title>
     </head>
-    <body>
+    <body class="body-classic">
     <?php
         require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
@@ -86,26 +86,26 @@
 
 
             <!-- Liste article -->
-            <div class="row liste-element">
+            <div class="row">
 
                 <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste">
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold">
                                 <form action="index.php" method="post" class="flex-column">
                                     <button type="submit" class="btn-transparent">
                                         <div><span class="fa fa-eye"> </span> </div>
@@ -120,228 +120,228 @@
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
                     <!-- ligne -->
                     <div class="row ligne center">
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Nom </h2>
+                            <h2 class="txt-liste-bold"> Nom </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Prénom </h2>
+                            <h2 class="txt-liste-bold"> Prénom </h2>
                         </div> 
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> CP </h2>
+                            <h2 class="txt-liste-bold"> CP </h2>
                         </div>
                         <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste"> Ville </h2>
+                            <h2 class="txt-liste-bold"> Ville </h2>
                         </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 icon-voir">
-                            <h2 class="txt-liste"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
+                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
+                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
                         </div>
                     </div>
 
@@ -349,11 +349,8 @@
                 </div>
             </div>
             <!-- fin liste article -->
-
-
-
-            <!-- footer -->
-            <footer> </footer>
         </div>
+        <!-- footer -->
+        <footer> </footer>
     </body>
 </html>
