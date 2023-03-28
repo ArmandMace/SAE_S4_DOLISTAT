@@ -90,11 +90,6 @@
     padding-bottom: 5px;
 }
 
-.btn-transparent {
-    background-color: transparent;
-    border: transparent;
-}
-
 /* Navbar */
 .navbar {
     text-align: center;
@@ -184,3 +179,4 @@ img {
 footer {
     height: 150px;
 }
+

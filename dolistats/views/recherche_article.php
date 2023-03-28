@@ -105,8 +105,8 @@
                                     <button type="submit" class="btn-transparent">
                                         <div><span class="fa fa-eye"> </span> </div>
                                     </button>
-                                    <input type="hidden" name="controller" value="rechercheArticle">
-                                    <input type="hidden" name="action" value="ficheArticle">
+                                    <input type="hidden" name="controller" value="recherchearticle">
+                                    <input type="hidden" name="action" value="fichearticle">
                                 </form>
                             </h2>
                         </div>

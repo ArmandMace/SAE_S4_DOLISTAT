@@ -66,7 +66,7 @@ class defaultcomponentfactory implements ComponentFactory {
     }
 
     /**
-     * @return RechercheArticleController
+     * @return recherchearticlecontroller
      */
     public function buildRechercheArticleController(): recherchearticlecontroller
     {
@@ -74,7 +74,7 @@ class defaultcomponentfactory implements ComponentFactory {
     }
 
     /**
-     * @return RechercheClientController
+     * @return recherchearticlecontroller
      */
     public function buildRechercheClientController(): rechercheclientcontroller
     {
@@ -82,7 +82,7 @@ class defaultcomponentfactory implements ComponentFactory {
     }
 
     /**
-     * @return PalmaresArticleController
+     * @return palmaresarticlecontroller
      */
     public function buildPalmaresArticleController(): palmaresarticlecontroller
     {
@@ -90,7 +90,7 @@ class defaultcomponentfactory implements ComponentFactory {
     }
 
     /**
-     * @return PalmaresClientController
+     * @return palmaresclientcontroller
      */
     public function buildPalmaresClientController(): palmaresclientcontroller
     {
