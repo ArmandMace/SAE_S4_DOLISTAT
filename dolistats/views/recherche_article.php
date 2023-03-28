@@ -8,6 +8,10 @@
         <title>Recherche_article</title>
     </head>
     <body>
+    <?php
+        require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
+    ?>
+
         <!-- début container principal -->
         <div class="container-fluid">
 

@@ -7,6 +7,10 @@
 		<link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
 	</head>
 	<body class="bodyPage">
+    <?php
+        require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
+    ?>
+
 		<div class="container-fluid">
             <!-- navbar -->
             <div class="row flex-row flex-align-items-center navbar padding-top-5 padding-bottom-5 ">

@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
 	</head>
 	<body class="bodyIndex">
+    <?php
+        require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
+    ?>
 		<div class="container">
 			<!-- Titre : DoliStats -->
 			<div class="row">
