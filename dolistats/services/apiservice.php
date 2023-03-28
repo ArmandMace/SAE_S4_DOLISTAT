@@ -6,7 +6,7 @@
     /**
      * The APIService class
      */
-    class APIService
+    class apiservice
     {
         /**
          * @param $url

@@ -6,18 +6,18 @@
     use yasmf\httpHelper;
     use services\APIService;
 
-    class PalmaresArticleController
+    class palmaresclientcontroller
     {
-        private APIService $apiService;
+        private apiservice $apiService;
 
-        public function __construct(APIService $apiService)
+        public function __construct(apiservice $apiService)
         {
             $this->apiService = $apiService;
         }
 
         public function index() : View
         {
-            return new view("views/palmaresArticle");
+            return new view("views/palmares_client");
         }
 
     }
