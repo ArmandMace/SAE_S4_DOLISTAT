@@ -57,7 +57,7 @@
                 <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
                     <a href="palmares_client.html">
                         <div><span class="fa fa-money-bill"> </span> </div>
-                        <div class="titre-navbar"> Chiffre d'Affaire </div>
+                        <div class="titre-navbar"> Chiffre d'Affaires </div>
                     </a>
                 </div>
 
