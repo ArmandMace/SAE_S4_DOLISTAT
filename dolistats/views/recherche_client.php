@@ -1,3 +1,4 @@
+<?php var_dump($_SESSION);?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -110,8 +111,8 @@
                                     <button type="submit" class="btn-transparent">
                                         <div><span class="fa fa-eye"> </span> </div>
                                     </button>
-                                    <input type="hidden" name="controller" value="rechercheClient">
-                                    <input type="hidden" name="action" value="ficheClient">
+                                    <input type="hidden" name="controller" value="rechercheclient">
+                                    <input type="hidden" name="action" value="ficheclient">
                                 </form>
                             </h2>
                         </div>

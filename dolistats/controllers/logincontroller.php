@@ -5,6 +5,7 @@
     use yasmf\httpHelper;
     use services\APIService;
 
+    session_start();
     class logincontroller
     {
         private apiservice $apiService;
@@ -38,6 +39,7 @@
                 $view = new View("views/login");
                 $view->setVar("login", $login);
             } else {
+                $_SESSION["sessionId"] = session_id();
                 $_SESSION["identifiant"] = $login;
                 $data = $dataJson->success;
                 $_SESSION["token"] = $data->token;
@@ -51,7 +53,7 @@
 
         public function deconnexion() : View
         {
-            session_start();
+            session_unset();
             session_destroy();
             return new View("views/login");
         }

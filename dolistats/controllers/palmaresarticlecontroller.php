@@ -6,6 +6,7 @@
     use yasmf\httpHelper;
     use services\APIService;
 
+    session_start();
     class palmaresarticlecontroller
     {
         private apiservice $apiService;
