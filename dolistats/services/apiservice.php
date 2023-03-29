@@ -19,6 +19,9 @@
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($curl, CURLOPT_FAILONERROR, true);
+            if (isset($_SESSION["token"])) {
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array("DOLAPIKEY:".$_SESSION["token"]));
+            }
             return $curl;
         }
 
@@ -44,7 +47,18 @@
         }
 
         function getArticle() {
-            $urlArticle = self::urlApi . "products?sortfield=t.ref&sortorder=ASC&limit=100";
+            $urlArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100";
+            $curl = $this->createCurl($urlArticle);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
         }
 
         function getClient() {
