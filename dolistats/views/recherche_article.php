@@ -3,12 +3,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style2.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css"/>
         <title>Recherche_article</title>
     </head>
-    <body>
+    <body class="body-classic">
     <?php
         require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
