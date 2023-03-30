@@ -27,8 +27,7 @@ namespace controllers;
         {
             $designation = htmlspecialchars(httpHelper::getParam("designationArticle"));
             $dataJson = $this->apiService->getArticle($designation);
-            var_dump($dataJson);
-            if ($dataJson == []) {
+            if ($dataJson == [] or $designation=="") {
                 return new view("views/recherche_article");
             } else {
                 $view = new view("views/recherche_article");
