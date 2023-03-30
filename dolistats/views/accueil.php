@@ -1,4 +1,3 @@
-<?php var_dump($_SESSION);?>
 <!DOCTYPE html>
 	<head>
 		<meta charset='utf-8'>

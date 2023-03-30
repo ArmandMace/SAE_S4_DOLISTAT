@@ -1,4 +1,3 @@
-<?php var_dump($_SESSION);?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -90,14 +89,12 @@
             </div>
             <!-- Fin de la searchbar -->
 
-
-            <?php if (isset($articles)) { ?>
                 <!-- Liste article -->
                 <div class="row liste-element">
                     <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
                         <div class="row ligne center">
                             <div class="col-sm-2 col-xs-3">
-                                <h2 class="txt-liste"> Nom Article </h2>
+                                <h2 class="txt-liste"> Désignation </h2>
                             </div>
                             <div class="col-sm-2 col-xs-3">
                                 <h2 class="txt-liste"> Référence </h2>
@@ -106,7 +103,7 @@
                                     <h2 class="txt-liste"> Fiche Article </h2>
                             </div>
                         </div>
-                        <?php foreach ($articles as $ligne) { ?>
+                        <?php if (isset($articles)) { foreach ($articles as $ligne) { ?>
                             <!-- ligne -->
                             <div class="row ligne center">
                                 <div class="col-sm-2 col-xs-3">
@@ -129,14 +126,10 @@
                                 </div>
                             </div>
                         <?php } ?>
-
                     </div>
                 </div>
                 <!-- fin liste article -->
             <?php } ?>
-
-
-
             <!-- footer -->
             <footer> </footer>
         </div>
