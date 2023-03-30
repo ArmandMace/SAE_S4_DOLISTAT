@@ -25,8 +25,9 @@ namespace controllers;
 
         public function rechercheArticle(): View
         {
-            $dataJson = $this->apiService->getArticle();
-
+            $designation = htmlspecialchars(httpHelper::getParam("designationArticle"));
+            $dataJson = $this->apiService->getArticle($designation);
+            var_dump($dataJson);
             if ($dataJson == []) {
                 return new view("views/recherche_article");
             } else {

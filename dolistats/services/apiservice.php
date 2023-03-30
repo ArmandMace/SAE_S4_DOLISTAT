@@ -46,8 +46,8 @@
             }
         }
 
-        function getArticle() {
-            $urlArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100";
+        function getArticle($designation) {
+            $urlArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.label%3Alike%3A'%25".$designation."%25')";
             $curl = $this->createCurl($urlArticle);
 
             $result = curl_exec($curl);
