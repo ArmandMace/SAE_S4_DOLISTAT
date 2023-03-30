@@ -61,8 +61,19 @@
             }
         }
 
-        function getClient() {
+        function getClient($designation) {
+            $urlClient = $_SESSION["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%20like%20'0'%20AND%20t.nom%20like%20'%25". $designation ."%25')";
+            $curl = $this->createCurl($urlClient);
 
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
         }
 
     }

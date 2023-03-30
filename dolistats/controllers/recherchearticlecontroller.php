@@ -35,7 +35,6 @@ namespace controllers;
                 $view->setVar("articles", $dataJson);
                 return $view;
             }
-
         }
 
         public function ficheArticle() : View
