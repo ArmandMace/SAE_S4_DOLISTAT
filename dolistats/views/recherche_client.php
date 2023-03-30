@@ -1,3 +1,4 @@
+<?php var_dump($_SESSION);?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -77,278 +78,72 @@
 
 
             <!-- searchbar -->
-            <div class="row searchbar">
-                <input class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1" type="text" placeholder="Désignation"> </input>
-                <input class="search-element search-button col-md-2 col-sm-3 col-xs-4" type="button" value="RECHERCHER"> </input>
-            </div>
+            <form class="row searchbar">
+                <input type="text" name="designationClient" class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"  placeholder="Désignation"> </input>
+                <button type="submit" class="search-element search-button col-md-2 col-sm-3 col-xs-4" type="button">
+                    <div><span class="fa fa-search"> </span> Rechercher </div>
+                </button>
+                <input type="hidden" name="controller" value="rechercheclient">
+                <input type="hidden" name="action" value="rechercheClient">
+            </form>
             <!-- Fin de la searchbar -->
 
 
 
-            <!-- Liste article -->
-            <div class="row">
+            <?php if (isset($clients)) { ?>
+                <!-- Liste client -->
+                <div class="row">
 
-                <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+                    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
+                        <!-- entete -->
+                        <div class="row ligne center">
+                            <div class="col-md-3 col-xs-2">
+                                <h2 class="txt-liste-bold"> Nom Société </h2>
+                            </div>
+                            <div class="col-md-1 col-xs-2">
+                                <h2 class="txt-liste-bold"> CP </h2>
+                            </div>
+                            <div class="col-md-2 col-xs-2">
+                                <h2 class="txt-liste-bold"> Ville </h2>
+                            </div>
+                            <div class="col-xs-2 col-xs-offset-2 col-md-offset-4 right">
+                                <h2 class="txt-liste-bold"> Fiche Client </h2>
+                            </div>
                         </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
+                        <!-- fin entete -->
+
+                        <!-- ligne -->
+                        <?php foreach ($clients as $ligne) { ?>
+                        <div class="row ligne center">
+                            <div class="col-md-3 col-xs-2">
+                                <h2 class="txt-liste-bold"> <?php echo $ligne['name'] ?> </h2> <!-- Nom entreprise -->
+                            </div>
+                            <div class="col-md-1 col-xs-2">
+                                <h2 class="txt-liste-bold"> <?php echo $ligne['zip'] ?> </h2> <!-- CP -->
+                            </div>
+                            <div class="col-md-2 col-xs-2">
+                                <h2 class="txt-liste-bold"> <?php echo $ligne['town'] ?> </h2> <!-- Ville -->
+                            </div>
+                            <div class="col-xs-1 col-xs-offset-3 col-md-offset-5 right">
+                                <h2 class="txt-liste-bold">
+                                    <form action="index.php" method="post" class="flex-column">
+                                        <button type="submit" class="btn-transparent">
+                                            <div><span class="fa fa-eye"> </span> </div>
+                                        </button>
+                                        <input type="hidden" name="controller" value="rechercheclient">
+                                        <input type="hidden" name="action" value="ficheclient">
+                                    </form>
+                                </h2>
+                            </div>
                         </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold">
-                                <form action="index.php" method="post" class="flex-column">
-                                    <button type="submit" class="btn-transparent">
-                                        <div><span class="fa fa-eye"> </span> </div>
-                                    </button>
-                                    <input type="hidden" name="controller" value="rechercheclient">
-                                    <input type="hidden" name="action" value="ficheclient">
-                                </form>
-                            </h2>
-                        </div>
+                        <?php } ?>
+                        <!-- fin de ligne -->
+
                     </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-                    <!-- ligne -->
-                    <div class="row ligne center">
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Nom </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Prénom </h2>
-                        </div> 
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> CP </h2>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <h2 class="txt-liste-bold"> Ville </h2>
-                        </div>
-                        <div class="col-xs-1 col-xs-offset-3 col-md-offset-7 right">
-                            <h2 class="txt-liste-bold"> <a href="fiche_client.html"> <span class="fa fa-eye"></span></a> </h2>
-                        </div>
-                    </div>
-
-
                 </div>
-            </div>
-            <!-- fin liste article -->
+                <!-- fin liste client -->
+            <?php } ?>
         </div>
         <!-- footer -->
         <footer> </footer>
