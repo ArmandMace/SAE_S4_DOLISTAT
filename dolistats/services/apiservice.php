@@ -9,6 +9,7 @@
     class apiservice
     {
         /**
+         * Fonction de création de l'objet curl utilisé pour accéder à l'API
          * @param $url
          * @return \CurlHandle|false
          */
@@ -26,8 +27,10 @@
         }
 
         /**
+         * Fonction de connexion à l'API
          * @param $id
          * @param $mdp
+         * @param $url
          * @return array|mixed
          */
         function login($id, $mdp, $url): mixed
@@ -46,7 +49,13 @@
             }
         }
 
-        function getArticle($designation) {
+        /**
+         * Focntion de recherche des articles correpsondants à $designation
+         * @param $designation
+         * @return array|mixed
+         */
+        function getArticle($designation) : mixed
+        {
             $urlArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.label%3Alike%3A'%25".$designation."%25')";
             $curl = $this->createCurl($urlArticle);
 
@@ -61,6 +70,26 @@
             }
         }
 
+        /**
+         * Renvoie les données d'un article recherché par sa réference
+         * @param $ref
+         * @return mixed
+         */
+        function getArticleByRef($ref) : mixed
+        {
+            $urlRefArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.ref%3Alike%3A'".$ref."')";
+            $curl = $this->createCurl($urlRefArticle);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
         function getClient() {
 
         }

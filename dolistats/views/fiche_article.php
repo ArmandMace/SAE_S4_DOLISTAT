@@ -84,14 +84,20 @@
                     <div class="row entete">
                         <div class="col-md-2 flex-row flex-justify-center"> <img class="img" src="../img/produit_vide.png"> </div>
                         <div class="col-md-7 flex-column flex-justify-space-between height-55"> 
-                            <div class="titre-en-tete"> Ref. </div>
-                            <div class="texte-en-tete"> Libellé </div>
+                            <div class="titre-en-tete"> <?php echo $ref; ?> </div>
+                            <div class="texte-en-tete"> <?php echo $label?> </div>
                         </div>
                         <div class="col-md-3 flex-column flex-justify-space-between height-100">
-                            <div class="titre-en-tete center"> <a href="recherche_article.html"> Retour liste </a></div>
+                            <div class="titre-en-tete center">
+                                <form action="index.php" method="POST">
+                                    <input type="hidden" name="controller" value="recherchearticle">
+                                    <input type="hidden" name="action" value="index">
+                                    <button type="submit">Retour Liste</button>
+                                </form>
+                            </div>
                             <div class="flex-row flex-justify-center flex-gap-20"> 
-                                <div class="btn-vert"> En vente </div>
-                                <div class="btn-blanc"> Hors achat </div>
+                                <div class="<?php if($status == 1) { echo "btn-vert"; } else { echo "btn_blanc"; }?>"> En vente </div>
+                                <div class="<?php if($statusBuy == 1) { echo "btn-vert"; } else { echo "btn_blanc"; }?>"> Hors achat </div>
                             </div>
                         </div>
                     </div>
@@ -108,31 +114,33 @@
                             <!-- lignes -->
                             <div class="row ligne"> 
                                 <div class="col-md-6"> Description </div>
-                                <div class="col-md-6"> Ceci est une description du produit que vous avez sélectionné </div>
+                                <div class="col-md-6"> <?php echo $description;?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Poids </div>
-                                <div class="col-md-6"> 1000kg </div>
+                                <div class="col-md-6"> <?php echo $weight;?> kg</div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Pays d'origine </div>
-                                <div class="col-md-6"> Chine </div>
+                                <div class="col-md-6"> <?php echo $pays;?> </div>
                             </div>
-                            <div class="row ligne">
-                                <div class="col-md-6"> Prix de vente TTC </div>
-                                <div class="col-md-6"> 220€ </div>
-                            </div>
-                            <div class="row ligne">
-                                <div class="col-md-6"> Prix de vente minimal TTC </div>
-                                <div class="col-md-6"> 220€ </div>
-                            </div>
-                            <div class="row ligne">
-                                <div class="col-md-6"> Taux TVA </div>
-                                <div class="col-md-6"> 20% </div>
-                            </div>
+                            <?php if($statusBuy != 1) { ?>
+                                <div class="row ligne">
+                                    <div class="col-md-6"> Prix de vente TTC </div>
+                                    <div class="col-md-6"> <?php echo $prixTTC;?> €</div>
+                                </div>
+                                <div class="row ligne">
+                                    <div class="col-md-6"> Prix de vente minimal TTC </div>
+                                    <div class="col-md-6"> <?php echo $prixMinTTC;?> €</div>
+                                </div>
+                                <div class="row ligne">
+                                    <div class="col-md-6"> Taux TVA </div>
+                                    <div class="col-md-6"> <?php echo $tva;?> %</div>
+                                </div>
+                            <?php } ?>
                             <div class="row ligne">
                                 <div class="col-md-6"> Stock </div>
-                                <div class="col-md-6"> 27 </div>
+                                <div class="col-md-6"> <?php echo $stock;?> </div>
                             </div>
 
                         </div>

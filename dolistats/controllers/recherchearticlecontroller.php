@@ -39,7 +39,29 @@ namespace controllers;
 
         public function ficheArticle() : View
         {
-            return new view("views/fiche_article");
+            $ref = htmlspecialchars(httpHelper::getParam("reference"));
+            $dataJson = $this->apiService->getArticleByRef($ref);
+            if ($dataJson == []) {
+                return new view("views/recherche_article");
+            } else {
+                var_dump($dataJson);
+                $view = new view("views/fiche_article");
+                foreach($dataJson as $item) {
+                    $view->setVar("ref", $item["ref"]);
+                    $view->setVar("label", $item["label"]);
+                    $view->setVar("status", $item["status"]);
+                    $view->setVar("statusBuy", $item["status_buy"]);
+                    $view->setVar("description", $item["description"]);
+                    $view->setVar("weight", $item["weight"]);
+                    $view->setVar("pays", $item["country_code"]);
+                    $view->setVar("prixTTC", $item["price_ttc"]);
+                    $view->setVar("prixMinTTC", $item["price_min_ttc"]);
+                    $view->setVar("tva", $item["tva_tx"]);
+                    $view->setVar("stock", $item["stock_reel"]);
+                }
+                return $view;
+            }
+
         }
     }
 
