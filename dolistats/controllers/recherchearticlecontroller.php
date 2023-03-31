@@ -43,7 +43,6 @@ namespace controllers;
             if ($dataJson == []) {
                 return new view("views/recherche_article");
             } else {
-                var_dump($dataJson);
                 $view = new view("views/fiche_article");
                 foreach($dataJson as $item) {
                     $view->setVar("ref", $item["ref"]);

@@ -44,7 +44,6 @@
                 $data = $dataJson->success;
                 $_SESSION["token"] = $data->token;
                 $_SESSION["url"] = $url;
-                var_dump($_SESSION);
                 $view = new View("views/accueil");
             }
             return $view;
