@@ -2,8 +2,8 @@
 
     namespace controllers;
 
-    use yasmf\view;
-    use yasmf\httpHelper;
+    use yasmf\View;
+    use yasmf\HttpHelper;
     use services\APIService;
 
     session_start();
