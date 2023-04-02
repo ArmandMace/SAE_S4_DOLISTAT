@@ -2,11 +2,9 @@
 
     namespace controllers;
 
-    use SebastianBergmann\CodeCoverage\DeadCodeDetectionNotSupportedException;
-    use yasmf\view;
-    use yasmf\httpHelper;
+    use yasmf\View;
+    use yasmf\HttpHelper;
     use services\APIService;
-    use function Sodium\add;
 
     session_start();
     class palmaresarticlecontroller
