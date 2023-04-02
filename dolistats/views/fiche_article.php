@@ -9,7 +9,7 @@
     </head>
     <body class="body-classic">
     <?php
-        require $_SERVER['DOCUMENT_ROOT'] . "/lib/vendor/autoload.php";
+        require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
         <!-- début container principal -->
         <div class="container-fluid">
