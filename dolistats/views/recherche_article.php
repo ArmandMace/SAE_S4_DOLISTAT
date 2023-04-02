@@ -110,32 +110,33 @@
 
                         <!-- ligne -->
                         <?php foreach ($articles as $ligne) { ?>
-                        <div class="row ligne center">
-                            <div class="col-sm-2 col-xs-3">
-                                <h2 class="txt-liste-bold"> <?php echo $ligne["label"]; ?> </h2>
+                            <div class="row ligne center">
+                                <div class="col-sm-2 col-xs-3">
+                                    <h2 class="txt-liste-bold"> <?php echo $ligne["label"]; ?> </h2>
+                                </div>
+                                <div class="col-sm-2 col-xs-3">
+                                    <h2 class="txt-liste-bold"> <?php echo $ligne["ref"]; ?> </h2>
+                                </div>
+                                <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
+                                    <h2 class="txt-liste-bold">
+                                        <form action="index.php" method="post" class="flex-column">
+                                            <button type="submit" class="btn-transparent">
+                                                <div><span class="fa fa-eye"> </span> </div>
+                                            </button>
+                                            <input type="hidden" name="controller" value="recherchearticle">
+                                            <input type="hidden" name="action" value="ficheArticle">
+                                            <input type="hidden" name="reference" value="<?php echo $ligne["ref"]; ?>">
+                                        </form>
+                                    </h2>
+                                </div>
                             </div>
-                            <div class="col-sm-2 col-xs-3">
-                                <h2 class="txt-liste-bold"> <?php echo $ligne["ref"]; ?> </h2>
-                            </div>
-                            <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                                <h2 class="txt-liste-bold">
-                                    <form action="index.php" method="post" class="flex-column">
-                                        <button type="submit" class="btn-transparent">
-                                            <div><span class="fa fa-eye"> </span> </div>
-                                        </button>
-                                        <input type="hidden" name="controller" value="recherchearticle">
-                                        <input type="hidden" name="action" value="ficheArticle">
-                                        <input type="hidden" name="reference" value="<?php echo $ligne["ref"]; ?>">
-                                    </form>
-                                </h2>
-                            </div>
-                        </div>
+                        <?php } ?>
                         <!-- Fin ligne -->
                     <?php } ?>
                 </div>
             </div>
             <!-- fin liste article -->
-            <?php } ?>
+
             <!-- footer -->
             <footer> </footer>
         </div>
