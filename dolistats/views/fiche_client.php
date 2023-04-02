@@ -91,7 +91,7 @@
                                 <form action="index.php" method="POST">
                                     <input type="hidden" name="controller" value="rechercheclient">
                                     <input type="hidden" name="action" value="index">
-                                    <button type="submit">Retour Liste</button>
+                                    <button type="submit" class="btn-transparent">Retour Liste</button>
                                 </form>
                             </div>
                         </div>
