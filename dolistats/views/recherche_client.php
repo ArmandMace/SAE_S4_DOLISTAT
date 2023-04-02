@@ -1,4 +1,3 @@
-<?php var_dump($_SESSION);?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -128,11 +127,13 @@
                             <div class="col-xs-1 col-xs-offset-3 col-md-offset-5 right">
                                 <h2 class="txt-liste-bold">
                                     <form action="index.php" method="post" class="flex-column">
+                                        <input type="hidden" name="name" value="<?php echo $ligne["name"]; ?>">
+                                        <input type="hidden" name="ref" value="<?php echo $ligne["ref"]; ?>">
+                                        <input type="hidden" name="controller" value="rechercheclient">
+                                        <input type="hidden" name="action" value="ficheClient">
                                         <button type="submit" class="btn-transparent">
                                             <div><span class="fa fa-eye"> </span> </div>
                                         </button>
-                                        <input type="hidden" name="controller" value="rechercheclient">
-                                        <input type="hidden" name="action" value="ficheclient">
                                     </form>
                                 </h2>
                             </div>
