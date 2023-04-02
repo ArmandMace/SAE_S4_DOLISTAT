@@ -74,8 +74,6 @@
             </div>
             <!-- Fin de la navbar -->
 
-
-
             <!-- En tête produit -->
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -88,16 +86,16 @@
                             <div class="texte-en-tete"> <?php echo $label?> </div>
                         </div>
                         <div class="col-md-3 flex-column flex-justify-space-between height-100">
-                            <div class="titre-en-tete center">
-                                <form action="index.php" method="POST">
-                                    <input type="hidden" name="controller" value="recherchearticle">
-                                    <input type="hidden" name="action" value="index">
-                                    <button type="submit">Retour Liste</button>
-                                </form>
-                            </div>
+                            <form action="index.php" method="post" class="titre-en-tete center">
+                                <button type="submit" class="btn-transparent">
+                                    Retour Liste
+                                </button>
+                                <input type="hidden" name="controller" value="recherchearticle">
+                                <input type="hidden" name="action" value="index">
+                            </form>
                             <div class="flex-row flex-justify-center flex-gap-20"> 
-                                <div class="<?php if($status == 1) { echo "btn-vert"; } else { echo "btn_blanc"; }?>"> En vente </div>
-                                <div class="<?php if($statusBuy == 1) { echo "btn-vert"; } else { echo "btn_blanc"; }?>"> Hors achat </div>
+                                <div class=<?php if($status == 1) { echo "\"btn-vert\"> En vente"; } else { echo "\"btn-blanc\"> Hors vente"; }?> </div>
+                                <div class=<?php if($statusBuy == 1) { echo "\"btn-vert\"> En Achat"; } else { echo "\"btn-blanc\"> Hors Achat"; }?> </div>
                             </div>
                         </div>
                     </div>

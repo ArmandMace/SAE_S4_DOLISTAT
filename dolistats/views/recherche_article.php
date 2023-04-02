@@ -74,52 +74,58 @@
             </div>
             <!-- Fin de la navbar -->
 
-
-
             <!-- searchbar -->
-            <div class="row searchbar">
-                <form action="index.php" method="post">
-                    <input class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"
-                           type="text" placeholder="Désignation" name="designationArticle">
-                    <input type="hidden" name="controller" value="recherchearticle">
-                    <input type="hidden" name="action" value="rechercheArticle">
-                    <button class="search-element search-button col-md-2 col-sm-3 col-xs-4" type="submit" value="RECHERCHER">Recherche</button>
-                </form>
-            </div>
+            <form class="row searchbar" action="index.php" method="post">
+                <input class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"
+                       type="text" placeholder="Désignation" name="designationArticle">
+                <button type="submit" class="search-element search-button col-md-2 col-sm-3 col-xs-4" type="button">
+                    <div><span class="fa fa-search"> </span> Rechercher </div>
+                </button>
+                <input type="hidden" name="controller" value="recherchearticle">
+                <input type="hidden" name="action" value="rechercheArticle">
+            </form>
             <!-- Fin de la searchbar -->
 
             <!-- Liste article -->
-            <div class="row liste-element">
+            <div class="row">
+
                 <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+
+                    <!-- entete -->
                     <div class="row ligne center">
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Désignation </h2>
+                            <h2 class="txt-liste-bold"> Désignation </h2>
                         </div>
                         <div class="col-sm-2 col-xs-3">
-                            <h2 class="txt-liste"> Référence </h2>
+                            <h2 class="txt-liste-bold"> Référence </h2>
                         </div>
-                        <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                                <h2 class="txt-liste"> Fiche Article </h2>
+                        <div class="col-xs-2 col-sm-offset-6 col-xs-offset-4 right">
+                                <h2 class="txt-liste-bold"> Fiche Article </h2>
                         </div>
                     </div>
-                    <?php if (isset($articles)) { foreach ($articles as $ligne) { ?>
+                    <!-- fin entete -->
+
+                    <!-- Si une recherche est effectuée -->
+                    <?php if (isset($articles)) {  ?>
+
                         <!-- ligne -->
+                        <?php foreach ($articles as $ligne) { ?>
                         <div class="row ligne center">
                             <div class="col-sm-2 col-xs-3">
-                                <h2 class="txt-liste"> <?php echo $ligne["label"]; ?> </h2>
+                                <h2 class="txt-liste-bold"> <?php echo $ligne["label"]; ?> </h2>
                             </div>
                             <div class="col-sm-2 col-xs-3">
-                                <h2 class="txt-liste"> <?php echo $ligne["ref"]; ?> </h2>
+                                <h2 class="txt-liste-bold"> <?php echo $ligne["ref"]; ?> </h2>
                             </div>
                             <div class="col-xs-1 col-sm-offset-7 col-xs-offset-5 icon-voir">
-                                <h2 class="txt-liste">
+                                <h2 class="txt-liste-bold">
                                     <form action="index.php" method="post" class="flex-column">
-                                        <input type="hidden" name="reference" value="<?php echo $ligne["ref"]; ?>">
-                                        <input type="hidden" name="controller" value="recherchearticle">
-                                        <input type="hidden" name="action" value="ficheArticle">
                                         <button type="submit" class="btn-transparent">
                                             <div><span class="fa fa-eye"> </span> </div>
                                         </button>
+                                        <input type="hidden" name="controller" value="recherchearticle">
+                                        <input type="hidden" name="action" value="ficheArticle">
+                                        <input type="hidden" name="reference" value="<?php echo $ligne["ref"]; ?>">
                                     </form>
                                 </h2>
                             </div>

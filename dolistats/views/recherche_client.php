@@ -78,8 +78,8 @@
 
 
             <!-- searchbar -->
-            <form class="row searchbar">
-                <input type="text" name="designationClient" class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"  placeholder="Désignation"> </input>
+            <form class="row searchbar" action="index.php" method="post">
+                <input type="text" name="designationClient" class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"  placeholder="Désignation">
                 <button type="submit" class="search-element search-button col-md-2 col-sm-3 col-xs-4" type="button">
                     <div><span class="fa fa-search"> </span> Rechercher </div>
                 </button>
@@ -88,30 +88,30 @@
             </form>
             <!-- Fin de la searchbar -->
 
+            <!-- Liste client -->
+            <div class="row">
 
+                <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
-            <?php if (isset($clients)) { ?>
-                <!-- Liste client -->
-                <div class="row">
-
-                    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-
-                        <!-- entete -->
-                        <div class="row ligne center">
-                            <div class="col-md-3 col-xs-2">
-                                <h2 class="txt-liste-bold"> Nom Société </h2>
-                            </div>
-                            <div class="col-md-1 col-xs-2">
-                                <h2 class="txt-liste-bold"> CP </h2>
-                            </div>
-                            <div class="col-md-2 col-xs-2">
-                                <h2 class="txt-liste-bold"> Ville </h2>
-                            </div>
-                            <div class="col-xs-2 col-xs-offset-2 col-md-offset-4 right">
-                                <h2 class="txt-liste-bold"> Fiche Client </h2>
-                            </div>
+                    <!-- entete -->
+                    <div class="row ligne center">
+                        <div class="col-md-3 col-xs-2">
+                            <h2 class="txt-liste-bold"> Nom Société </h2>
                         </div>
-                        <!-- fin entete -->
+                        <div class="col-md-1 col-xs-2">
+                            <h2 class="txt-liste-bold"> CP </h2>
+                        </div>
+                        <div class="col-md-2 col-xs-2">
+                            <h2 class="txt-liste-bold"> Ville </h2>
+                        </div>
+                        <div class="col-xs-2 col-xs-offset-2 col-md-offset-4 right">
+                            <h2 class="txt-liste-bold"> Fiche Client </h2>
+                        </div>
+                    </div>
+                    <!-- fin entete -->
+
+                    <!-- Si une recherche est effectuée -->
+                    <?php if (isset($clients)) { ?>
 
                         <!-- ligne -->
                         <?php foreach ($clients as $ligne) { ?>
@@ -139,11 +139,10 @@
                         </div>
                         <?php } ?>
                         <!-- fin de ligne -->
-
-                    </div>
+                    <?php } ?>
                 </div>
-                <!-- fin liste client -->
-            <?php } ?>
+            </div>
+            <!-- fin liste client -->
         </div>
         <!-- footer -->
         <footer> </footer>

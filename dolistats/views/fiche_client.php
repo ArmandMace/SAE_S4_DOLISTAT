@@ -74,7 +74,6 @@
             </div>
             <!-- Fin de la navbar -->
 
-
             <!-- En tête produit -->
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
