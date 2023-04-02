@@ -9,6 +9,7 @@
 .body-classic {
     font-family: 'Roboto', sans-serif;
     background-color:#ECEFF7;
+    border-top: solid 2px white;
 }
 
 /* Login Screen */
@@ -178,7 +179,6 @@
     text-align: center;
     background-color:#263c5c;
     color:#FFFFFF;
-    border-radius: 0%;
 }
 
 /* Searchbar */

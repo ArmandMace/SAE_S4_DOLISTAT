@@ -72,7 +72,6 @@
 
 			</div>
 			<!-- Fin de la navbar -->
-
 		</div>
 	</body>
 </html>

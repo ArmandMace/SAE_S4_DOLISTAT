@@ -91,9 +91,72 @@
             }
         }
 
+        function getArticleToSell() {
+            $url = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&sqlfilters=(t.tosell%3A%3D%3A1)";
+            $curl = $this->createCurl($url);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
+
+        function getMvt() {
+            $url = $_SESSION["url"] . "stockmovements?sortfield=t.rowid&sortorder=ASC";
+            $curl = $this->createCurl($url);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
+
         function getClient($designation) {
             $urlClient = $_SESSION["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%20like%20'0'%20AND%20t.nom%20like%20'%25". $designation ."%25')";
             $curl = $this->createCurl($urlClient);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
+
+        function getClientByNom($nom)
+        {
+            $nom = str_replace(" ", "%20", $nom);
+            $url = $_SESSION["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%3Alike%3A'0')%20and%20(t.nom%3Alike%3A'". $nom ."')";
+            $curl = $this->createCurl($url);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
+
+        function getFacturesByClient($ref)
+        {
+            $urlFacture = $_SESSION["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref;
+            $curl = $this->createCurl($urlFacture);
 
             $result = curl_exec($curl);
             $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);

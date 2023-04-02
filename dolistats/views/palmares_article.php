@@ -107,7 +107,7 @@
                                 <button type="submit" class="btn-TOP-x">
                                     <div> TOP </div>
                                 </button>
-                                <input type="text" name="top" class="btn-TOP-blank">
+                                <input type="text" name="topx" class="btn-TOP-blank">
                                 <input type="hidden" name="controller" value="palmaresarticle">
                                 <input type="hidden" name="action" value="topx">
                             </form>
@@ -139,165 +139,39 @@
                     <!-- liste -->
                     <div class="flex-column padding-top-20 padding-edge-20">
 
-                        <!-- ligne -->
+                        <!-- entete -->
                         <div class="row ligne center">
                             <div class="col-xs-1">
-                                <h2 class="txt-classic"> 1 </h2>
+                                <h2 class="txt-liste-bold"> Rang </h2>
                             </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
+                            <div class="col-xs-3 col-xs-offset-1">
+                                <h2 class="txt-liste-bold"> Nom Article </h2>
                             </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
+                            <div class="col-xs-3 col-xs-offset-4">
+                                <h2 class="txt-liste-bold"> NB vendu </h2>
                             </div>
                         </div>
+                        <!-- fin entete -->
 
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 2 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
+                        <!-- Si une recherche est effectué -->
+                        <?php if (isset($top)) { ?>
 
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 3 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 4 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 5 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 6 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 7 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 8 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 9 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
-
-                        <!-- ligne -->
-                        <div class="row ligne center">
-                            <div class="col-xs-1">
-                                <h2 class="txt-classic"> 10 </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Nom Article </h2>
-                            </div>
-                            <div class="col-xs-3">
-                                <h2 class="txt-classic"> Référence </h2>
-                            </div>
-                            <div class="col-xs-3 col-xs-offset-2 ">
-                                <h2 class="txt-classic"> CA </h2>
-                            </div>
-                        </div>
+                            <!-- ligne -->
+                            <?php $rang = 1; foreach ($top as $key => $value) { ?>
+                                <div class="row ligne center">
+                                    <div class="col-xs-1">
+                                        <h2 class="txt-classic"> <?php echo $rang; ?> </h2>
+                                    </div>
+                                    <div class="col-xs-3 col-xs-offset-1">
+                                        <h2 class="txt-classic"> <?php echo $key; ?> </h2>
+                                    </div>
+                                    <div class="col-xs-3 col-xs-offset-4">
+                                        <h2 class="txt-classic"> <?php echo $value; ?> </h2>
+                                    </div>
+                                </div>
+                            <?php $rang ++ ; } ?>
+                            <!-- fin de ligne -->
+                        <?php } ?>
                     </div>
 				</div>
 			</div>
