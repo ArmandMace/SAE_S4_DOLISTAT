@@ -127,7 +127,36 @@
                     <div class="row titre-en-tete center padding-top-50"> Graphique </div>
 
                     <!-- contenu -->
+                    <?php if (isset($top)) {
+                        $ref = [];
+                        $occurence = [];
+                        $compteur = 0;
+                        foreach ($top as $key => $value) {
+                            $ref[$compteur] = $key;
+                            $occurence[$compteur] = $value;
+                            $compteur ++;
+                        }
+                    ?>
+                        <!-- graphique -->
+                        <canvas id="myChart"></canvas>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script>
+                            const ctx = document.getElementById('myChart');
 
+                            new Chart(ctx, {
+                                type: 'pie',
+                                data: {
+                                    labels: [<?php foreach ($ref as $item) { echo "'".$item."',"; }; ?>],
+                                    datasets: [{
+                                        label: 'Articles vendus',
+                                        data: [<?php foreach ($occurence as $item) { echo "'".$item."',"; }; ?>],
+                                        borderWidth: 1
+                                    }]
+                                },
+                            });
+                        </script>
+                        <!-- fin graphique -->
+                    <?php } ?>
 				</div>
 
                 <!-- DROITE - Liste des résultats -->
