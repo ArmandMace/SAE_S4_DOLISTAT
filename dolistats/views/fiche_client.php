@@ -83,14 +83,17 @@
                     <div class="row entete">
                         <div class="col-md-2 flex-justify-center flex-row"> <span class="fa fa-building img"></span> </div>
                         <div class="col-md-7 flex-column ">
-                            <div class="titre-en-tete"> Nom du Tiers </div>
-                            <div class="txt-classic"> <span class="fa fa-map"></span> Localisation </div>
-                            <div class="txt-classic"> <span class="fa fa-phone"></span> Téléphone </div>
+                            <div class="titre-en-tete"> <?php echo $name;?> </div>
+                            <div class="txt-classic"> <span class="fa fa-map"></span> <?php echo $loca;?> </div>
+                            <div class="txt-classic"> <span class="fa fa-phone"></span> <?php echo $tel;?> </div>
                         </div>
                         <div class="col-md-3 flex-column flex-justify-space-between height-100">
-                            <div class="titre-en-tete center"> <a href="recherche_client.html"> Retour liste </a></div>
-                            <div class="flex-row flex-justify-center"> 
-                                <div class="btn-vert"> Client </div> <!-- Prospect ou client -->
+                            <div class="titre-en-tete center">
+                                <form action="index.php" method="POST">
+                                    <input type="hidden" name="controller" value="rechercheclient">
+                                    <input type="hidden" name="action" value="index">
+                                    <button type="submit">Retour Liste</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -107,31 +110,31 @@
                             <!-- lignes -->
                             <div class="row ligne"> 
                                 <div class="col-md-6"> Nom du client </div>
-                                <div class="col-md-6"> Alibaba </div>
+                                <div class="col-md-6"> <?php echo $name; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Alias </div>
-                                <div class="col-md-6"> Ali </div>
+                                <div class="col-md-6"> <?php echo $alias; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Code client </div>
-                                <div class="col-md-6"> CU233-000001 </div>
+                                <div class="col-md-6"> <?php echo $code_cli; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Mail </div>
-                                <div class="col-md-6"> ali@alibaba.com </div>
+                                <div class="col-md-6"> <?php echo $mail; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> SIREN </div>
-                                <div class="col-md-6"> 352 554 661 </div>
+                                <div class="col-md-6"> <?php echo $siren; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> SIRET </div>
-                                <div class="col-md-6"> 352 554 661 00046 </div>
+                                <div class="col-md-6"> <?php echo $siret; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Numéro de TVA </div>
-                                <div class="col-md-6"> FR51 3525 5466 1 </div>
+                                <div class="col-md-6"> <?php echo $numTVA; ?> </div>
                             </div>
 
                         </div>
@@ -141,28 +144,19 @@
                             <!-- lignes -->
                             <div class="row ligne"> 
                                 <div class="col-md-6"> Type du tiers </div>
-                                <div class="col-md-6"> ??? </div>
+                                <div class="col-md-6"> <?php echo $type; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Effectif </div>
-                                <div class="col-md-6"> ??? </div>
+                                <div class="col-md-6"> <?php echo $effectif; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Type d'entité légale </div>
-                                <div class="col-md-6"> ??? </div>
+                                <div class="col-md-6"> <?php echo $identite_legale; ?> </div>
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Capital </div>
-                                <div class="col-md-6"> 21 463 531,00€ </div>
-                            </div>
-                            <div class="row ligne">
-                                <div class="col-md-6"> Commerciaux </div>
-                                <div class="col-md-6"> 
-                                    <div class="flex-column flex-gap-5">
-                                        <div><span class="fa fa-user"></span> ChefCommercialMarketing </div>
-                                        <div><span class="fa fa-user"></span> EquipeCommercial </div>
-                                    </div>    
-                                </div>
+                                <div class="col-md-6"> <?php echo $capital; ?> </div>
                             </div>
                         </div>
                     </div>
@@ -176,71 +170,32 @@
                     <div class="flex-column flex-gap-20 padding-top-20">
 
                         <div class="row ligne center">
+                            <div class="col-md-2 titre-en-tete"> Ref </div>
                             <div class="col-md-2 titre-en-tete"> Date </div>
-                            <div class="col-md-6 titre-en-tete"> Produit </div>
-                            <div class="col-md-2 titre-en-tete"> Quantité </div>
-                            <div class="col-md-2 titre-en-tete"> Prix unitaire</div>
+                            <div class="col-md-2 titre-en-tete"> Date Echéance </div>
+                            <div class="col-md-2 titre-en-tete"> Montant HT </div>
+                            <div class="col-md-2 titre-en-tete"> Montant TTC</div>
                         </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
-                        <div class="row ligne center">
-                            <div class="col-md-2"> 01/01/2023 </div>
-                            <div class="col-md-6"> Chaise Electrique </div>
-                            <div class="col-md-2"> 2 </div>
-                            <div class="col-md-2"> 220,00€ </div>
-                        </div>
+                        <?php foreach ($factures as $facture) { ?>
+                            <div class="row ligne center">
+                                <div class="col-md-2"> <?php echo $facture["ref"]; ?> </div>
+                                <div class="col-md-2">
+                                    <?php
+                                        $date = \Datetime::createFromFormat('U', $facture["date"]);
+                                        echo $date->format('d/m/Y');
+                                    ?>
+                                </div>
+                                <div class="col-md-2"> <?php
+                                        $date = \Datetime::createFromFormat('U', $facture["date_lim_reglement"]);
+                                        echo $date->format('d/m/Y');
+                                    ?> </div>
+                                <div class="col-md-2"> <?php echo $facture["total_ht"]; ?> €</div>
+                                <div class="col-md-2"> <?php echo $facture["total_ttc"]; ?> €</div>
+                                <div class="col-md-2"> <a href="<?php echo str_replace("api/index.php/",
+                                "document.php?modulepart=facture&file=". $facture["ref"] ."%2F". $facture["ref"] .".pdf&entity=1",
+                                $_SESSION["url"]) ?>">PDF</a> </div>
+                            </div>
+                        <?php } ?>
                         
                     </div>
                 </div>
