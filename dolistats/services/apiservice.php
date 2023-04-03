@@ -184,6 +184,26 @@
             }
         }
 
+        function getFacturesPaid()
+        {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            //algo
+            $url = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&status=paid";
+            $curl = $this->createCurl($url);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
+
         function getFacturesByClient($ref)
         {
             // Variable session
