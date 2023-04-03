@@ -39,11 +39,20 @@
                 $view = new View("views/login");
                 $view->setVar("login", $login);
             } else {
-                $_SESSION["sessionId"] = session_id();
-                $_SESSION["identifiant"] = $login;
+                // Mise en place de la variable session.json
+                file_put_contents('session.json', '{}');
+                $session = json_decode(file_get_contents('session.json'), true);
+
+                // affectation des variables sessions
+                $session["sessionId"] = session_id();       // = $_SESSION["sessionId"] = session_id()
+                $_SESSION["identifiant"] = $login;          // = $_SESSION["identifiant"] = $login
                 $data = $dataJson->success;
-                $_SESSION["token"] = $data->token;
-                $_SESSION["url"] = $url;
+                $session["token"] = $data->token;           // = $_SESSION["token"] = $data->token;
+                $session["url"] = $url;                    // = $_SESSION["url"] = $url;
+
+                //update de session.json avec les variables associés
+                file_put_contents('session.json', json_encode($session));
+
                 $view = new View("views/accueil");
             }
             return $view;
@@ -52,8 +61,8 @@
 
         public function deconnexion() : View
         {
-            session_unset();
-            session_destroy();
+            // Reset de session.json
+            file_put_contents('session.json', '{}');
             return new View("views/login");
         }
 

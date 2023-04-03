@@ -15,13 +15,17 @@
          */
         function createCurl($url): \CurlHandle|false
         {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($curl, CURLOPT_FAILONERROR, true);
-            if (isset($_SESSION["token"])) {
-                curl_setopt($curl, CURLOPT_HTTPHEADER, array("DOLAPIKEY:".$_SESSION["token"]));
+            if (isset($session["token"])) {
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array("DOLAPIKEY:".$session["token"]));
             }
             return $curl;
         }
@@ -56,7 +60,11 @@
          */
         function getArticle($designation) : mixed
         {
-            $urlArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.label%3Alike%3A'%25".$designation."%25')";
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $urlArticle = $session["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.label%3Alike%3A'%25".$designation."%25')";
             $curl = $this->createCurl($urlArticle);
 
             $result = curl_exec($curl);
@@ -77,7 +85,11 @@
          */
         function getArticleByRef($ref) : mixed
         {
-            $urlRefArticle = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.ref%3Alike%3A'".$ref."')";
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $urlRefArticle = $session["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.ref%3Alike%3A'".$ref."')";
             $curl = $this->createCurl($urlRefArticle);
 
             $result = curl_exec($curl);
@@ -91,8 +103,13 @@
             }
         }
 
-        function getArticleToSell() {
-            $url = $_SESSION["url"] . "products?sortfield=t.ref&sortorder=ASC&sqlfilters=(t.tosell%3A%3D%3A1)";
+        function getArticleToSell()
+        {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $url = $session["url"] . "products?sortfield=t.ref&sortorder=ASC&sqlfilters=(t.tosell%3A%3D%3A1)";
             $curl = $this->createCurl($url);
 
             $result = curl_exec($curl);
@@ -106,8 +123,13 @@
             }
         }
 
-        function getMvt() {
-            $url = $_SESSION["url"] . "stockmovements?sortfield=t.rowid&sortorder=ASC";
+        function getMvt()
+        {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $url = $session["url"] . "stockmovements?sortfield=t.rowid&sortorder=ASC";
             $curl = $this->createCurl($url);
 
             $result = curl_exec($curl);
@@ -121,8 +143,13 @@
             }
         }
 
-        function getClient($designation) {
-            $urlClient = $_SESSION["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%20like%20'0'%20AND%20t.nom%20like%20'%25". $designation ."%25')";
+        function getClient($designation)
+        {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $urlClient = $session["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%20like%20'0'%20AND%20t.nom%20like%20'%25". $designation ."%25')";
             $curl = $this->createCurl($urlClient);
 
             $result = curl_exec($curl);
@@ -138,8 +165,12 @@
 
         function getClientByNom($nom)
         {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
             $nom = str_replace(" ", "%20", $nom);
-            $url = $_SESSION["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%3Alike%3A'0')%20and%20(t.nom%3Alike%3A'". $nom ."')";
+            $url = $session["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%3Alike%3A'0')%20and%20(t.nom%3Alike%3A'". $nom ."')";
             $curl = $this->createCurl($url);
 
             $result = curl_exec($curl);
@@ -155,7 +186,11 @@
 
         function getFacturesByClient($ref)
         {
-            $urlFacture = $_SESSION["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref;
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $urlFacture = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref;
             $curl = $this->createCurl($urlFacture);
 
             $result = curl_exec($curl);
