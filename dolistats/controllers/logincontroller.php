@@ -45,7 +45,7 @@
 
                 // affectation des variables sessions
                 $session["sessionId"] = session_id();       // = $_SESSION["sessionId"] = session_id()
-                $_SESSION["identifiant"] = $login;          // = $_SESSION["identifiant"] = $login
+                $session["identifiant"] = $login;          // = $_SESSION["identifiant"] = $login
                 $data = $dataJson->success;
                 $session["token"] = $data->token;           // = $_SESSION["token"] = $data->token;
                 $session["url"] = $url;                    // = $_SESSION["url"] = $url;
