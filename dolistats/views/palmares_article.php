@@ -146,7 +146,7 @@
                             new Chart(ctx, {
                                 type: 'pie',
                                 data: {
-                                    labels: [<?php foreach ($ref as $item) { echo "'".$item."',"; }; ?>],
+                                    labels: [<?php foreach ($ref as $item) { echo "\"".$item."\","; }; ?>],
                                     datasets: [{
                                         label: 'Articles vendus',
                                         data: [<?php foreach ($occurence as $item) { echo "'".$item."',"; }; ?>],

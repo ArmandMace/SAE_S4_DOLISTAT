@@ -43,7 +43,7 @@
             }
 
             // Calcul de la somme des sorties pour chaques produits
-            $finalSum = array_combine($IDArticleToSell, array(0, 0, 0, 0));
+            $finalSum = array_combine($IDArticleToSell, array_fill(0, count($IDArticleToSell), 0));
             foreach ($dataJsonMvtFinal as $mvt) {
                 $finalSum[$mvt["product_id"]] -= $mvt["qty"]; //les quantités sont négatives
             }
