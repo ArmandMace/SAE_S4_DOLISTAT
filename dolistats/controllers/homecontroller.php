@@ -6,6 +6,7 @@
     class homecontroller
     {
         /**
+         * Fonction de base qui affiche la vue de connexion au lancement de l'application
          * @return View
          */
         public function index(): View

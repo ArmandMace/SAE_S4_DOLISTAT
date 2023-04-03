@@ -1,5 +1,4 @@
 <?php
-
     namespace controllers;
 
     use yasmf\View;
@@ -7,6 +6,7 @@
     use services\APIService;
 
     session_start();
+
     class palmaresarticlecontroller
     {
         private apiservice $apiService;
@@ -24,6 +24,11 @@
             return new view("views/palmares_article");
         }
 
+        /**
+         * @param $dataJsonToSell
+         * @param $dataJsonMvt
+         * @return Array
+         */
         public function top($dataJsonToSell, $dataJsonMvt) : Array
         {
             // Récupération des ID des produits vendus
@@ -55,7 +60,7 @@
         }
 
         /**
-         * @return view
+         * @return View
          */
         public function top10() : View
         {

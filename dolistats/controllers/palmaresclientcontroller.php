@@ -1,5 +1,4 @@
 <?php
-
     namespace controllers;
 
     use yasmf\View;
@@ -7,6 +6,7 @@
     use services\APIService;
 
     session_start();
+
     class palmaresclientcontroller
     {
         private apiservice $apiService;

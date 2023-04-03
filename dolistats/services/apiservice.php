@@ -3,9 +3,6 @@
 
     use yasmf\HttpHelper;
 
-    /**
-     * The APIService class
-     */
     class apiservice
     {
         /**
@@ -24,7 +21,7 @@
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($curl, CURLOPT_FAILONERROR, true);
-            if (isset($session["token"])) {
+            if (isset($session["token"])) { // Utilise le token d'accés à l'api si utilisateur connecté
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array("DOLAPIKEY:".$session["token"]));
             }
             return $curl;
@@ -103,6 +100,10 @@
             }
         }
 
+        /**
+         * Renvoie la liste des articles vendus
+         * @return array|mixed
+         */
         function getArticleToSell()
         {
             // Variable session
@@ -123,6 +124,10 @@
             }
         }
 
+        /**
+         * Renvoie les mouvement de stock d'article
+         * @return array|mixed
+         */
         function getMvt()
         {
             // Variable session
@@ -143,6 +148,11 @@
             }
         }
 
+        /**
+         * Renvoie la liste des clients
+         * @param $designation
+         * @return array|mixed
+         */
         function getClient($designation)
         {
             // Variable session
@@ -163,6 +173,11 @@
             }
         }
 
+        /**
+         * Renvoie les données d'un client
+         * @param $nom
+         * @return array|mixed
+         */
         function getClientByNom($nom)
         {
             // Variable session
@@ -184,6 +199,11 @@
             }
         }
 
+        /**
+         * Renvoie les différentes factures d'un client
+         * @param $ref
+         * @return array|mixed
+         */
         function getFacturesByClient($ref)
         {
             // Variable session
@@ -203,6 +223,5 @@
                 return [];
             }
         }
-
     }
 

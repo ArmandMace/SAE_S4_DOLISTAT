@@ -6,6 +6,7 @@
     use services\APIService;
 
     session_start();
+
     class logincontroller
     {
         private apiservice $apiService;
@@ -16,6 +17,7 @@
         }
 
         /**
+         * Affichage de base de la vue login
          * @return view login
          */
         public function index() : View
@@ -27,28 +29,30 @@
         }
 
         /**
-         * Fonction de connexion à l'application
+         * Fonction de connexion à l'application, enregistre l'url de connexion utilisé si nouvelle et pas dans url.ini
          * @return View Acceuil if login information are correct
          * @return View Login if login information are incorrect
          */
         public function connexion() : View
         {
+            // Récupération des information de connexion
             $login = htmlspecialchars(HttpHelper::getParam("login"));
             $password = htmlspecialchars(HttpHelper::getParam("password"));
             $url = htmlspecialchars(httpHelper::getParam("url"));
             $newUrl = false;
+            // utilise l'url rentrée à la main si cette option à été choisie
             if ($url == "autre") {
                 $url = HttpHelper::getParam("autreURL");
                 $newUrl = true;
             }
-            $listeUrl = parse_ini_file('url.ini', true, INI_SCANNER_RAW);
-            $dataJson = $this->apiService->login($login, $password, $url);
+            $listeUrl = parse_ini_file('url.ini', true, INI_SCANNER_RAW); // initialisation de la liste des url à renvoyer si besoin
+            $dataJson = $this->apiService->login($login, $password, $url); // appel de l'api depuis le service
 
-            if($dataJson == []) {
+            if($dataJson == []) { // Si Json est vide, info de connexion éronnée -> renvoie sur la page de login
                 $view = new View("views/login");
                 $view->setVar("listeUrl", $listeUrl['listeUrl']);
                 $view->setVar("login", $login);
-            } else {
+            } else { // Json non vide, info de connexion validées par l'api -> enregistrement des info renvoyées par l'api dans la session
                 // Mise en place de la variable session.json
                 file_put_contents('session.json', '{}');
                 $session = json_decode(file_get_contents('session.json'), true);
@@ -62,15 +66,18 @@
 
                 //update de session.json avec les variables associés
                 file_put_contents('session.json', json_encode($session));
+                // Ajout de l'url dans url.ini si entrée à la main
                 if ($newUrl == true) {
                     $this->ajoutUrl($url);
                 }
                 $view = new View("views/accueil");
             }
             return $view;
-
         }
 
+        /**
+         * @return View
+         */
         public function deconnexion() : View
         {
             // Reset de session.json
@@ -81,6 +88,13 @@
             return $view;
         }
 
+        /**
+         * Fonction d'ajout de l'url dans le fichier url.ini
+         * Si url deja presente -> return false
+         * Si url pas dans le fichier -> return true + inscrit l'url dans le fichier à la suite de la précédente
+         * @param $url
+         * @return bool|void
+         */
         public function ajoutUrl($url) {
             $file = 'url.ini';
             // Charge le fichier .ini dans un tableau associatif
