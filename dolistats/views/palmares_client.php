@@ -10,7 +10,6 @@
     <?php
         require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH . "/lib/vendor/autoload.php";
     ?>
-
 		<div class="container-fluid">
 
             <!-- navbar -->
@@ -73,8 +72,6 @@
             </div>
             <!-- Fin de la navbar -->
 
-
-
             <!-- Page -->
             <div class="row">
 
@@ -82,59 +79,83 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
 
                     <!-- Critères d'affichage -->
-                    <div class="row height-150 flex-row flex-align-items-center">
+                    <form action="index.php" method="post" class="row height-150 flex-row flex-align-items-center">
 
                         <!-- Boutons TOP -->
                         <div class="col-md-6">
 
                             <!-- TOP 10 -->
-                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn-TOP">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-TOP" name="action" value="top10">
                                     <div> TOP 10 </div>
                                 </button>
-                                <input type="hidden" name="controller" value="palmaresclient">
-                                <input type="hidden" name="action" value="top10">
-                            </form>
+                            </div>
 
                             <!-- TOP 20 -->
-                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn-TOP">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-TOP" name="action" value="top20">
                                     <div> TOP 20 </div>
                                 </button>
-                                <input type="hidden" name="controller" value="palmaresclient">
-                                <input type="hidden" name="action" value="top20">
-                            </form>
+                            </div>
 
                             <!-- TOP x -->
-                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12 flex-row flex-gap-0">
-                                <button type="submit" class="btn-TOP-x">
+                            <div class="col-md-4 col-sm-12 col-xs-12 flex-row flex-gap-0">
+                                <button type="submit" class="btn-TOP-x" name="action" value="topx">
                                     <div> TOP </div>
                                 </button>
-                                <input type="text" name="top" class="btn-TOP-blank">
-                                <input type="hidden" name="controller" value="palmaresclient">
-                                <input type="hidden" name="action" value="topx">
-                            </form>
+                                <input type="text" name="topx" class="btn-TOP-blank" >
+                            </div>
+                            <input type="hidden" name="controller" value="palmaresclient">
                         </div>
 
                         <!-- Période -->
                         <div class="col-md-6 flex-column flex-align-items-center flex-gap-5">
                             <div class="txt-liste-bold"> Période du </div>
-                            <input type="date" min="2000-01-01"  max="2100-01-01" class="date">
+                            <input type="date" name="dateMin" min="2000-01-01"  max="2100-01-01" class="date">
                             <div class="txt-liste-bold"> au </div>
-                            <input type="date" min="2000-01-01"  max="2100-01-01" class="date">
+                            <input type="date" name="dateMax" min="2000-01-01"  max="2100-01-01" class="date">
                         </div>
-                    </div>
+                    </form>
                     <!-- fin des crière d'affichage -->
 
                     <!-- GRAPHIQUE -->
                     <div class="row titre-en-tete center padding-top-50"> Graphique </div>
 
                     <!-- contenu -->
+                    <?php if (isset($top)) {
+                        $ref = [];
+                        $occurence = [];
+                        $compteur = 0;
+                        foreach ($top as $key => $value) {
+                            $ref[$compteur] = $key;
+                            $occurence[$compteur] = $value;
+                            $compteur ++;
+                        }
+                    ?>
+                        <!-- graphique -->
+                        <canvas id="myChart"></canvas>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script>
+                            const ctx = document.getElementById('myChart');
 
-                </div>
+                            new Chart(ctx, {
+                                type: 'pie',
+                                data: {
+                                    labels: [<?php foreach ($ref as $item) { echo "\"".$item."\","; }; ?>],
+                                    datasets: [{
+                                        label: 'Articles vendus',
+                                        data: [<?php foreach ($occurence as $item) { echo "'".$item."',"; }; ?>],
+                                        borderWidth: 1
+                                    }]
+                                },
+                            });
+                        </script>
+                        <!-- fin graphique -->
+                    <?php } ?>
+				</div>
 
                 <!-- DROITE - Liste des résultats -->
-                <div class="col-md-6 col-sm-12 col-xs-12">
+				<div class="col-md-6 col-sm-12 col-xs-12">
 
                     <!-- titre -->
                     <div class="row titre-en-tete center padding-top-20"> Résultats </div>

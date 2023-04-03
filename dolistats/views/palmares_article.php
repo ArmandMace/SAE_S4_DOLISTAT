@@ -79,48 +79,43 @@
 				<div class="col-md-6 col-sm-12 col-xs-12">
 
                     <!-- Critères d'affichage -->
-                    <div class="row height-150 flex-row flex-align-items-center">
+                    <form action="index.php" method="post" class="row height-150 flex-row flex-align-items-center">
 
                         <!-- Boutons TOP -->
                         <div class="col-md-6">
 
                             <!-- TOP 10 -->
-                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn-TOP">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-TOP" name="action" value="top10">
                                     <div> TOP 10 </div>
                                 </button>
-                                <input type="hidden" name="controller" value="palmaresarticle">
-                                <input type="hidden" name="action" value="top10">
-                            </form>
+                            </div>
 
                             <!-- TOP 20 -->
-                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn-TOP">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-TOP" name="action" value="top20">
                                     <div> TOP 20 </div>
                                 </button>
-                                <input type="hidden" name="controller" value="palmaresarticle">
-                                <input type="hidden" name="action" value="top20">
-                            </form>
+                            </div>
 
                             <!-- TOP x -->
-                            <form action="index.php" method="post" class="col-md-4 col-sm-12 col-xs-12 flex-row flex-gap-0">
-                                <button type="submit" class="btn-TOP-x">
+                            <div class="col-md-4 col-sm-12 col-xs-12 flex-row flex-gap-0">
+                                <button type="submit" class="btn-TOP-x" name="action" value="topx">
                                     <div> TOP </div>
                                 </button>
-                                <input type="text" name="topx" class="btn-TOP-blank">
-                                <input type="hidden" name="controller" value="palmaresarticle">
-                                <input type="hidden" name="action" value="topx">
-                            </form>
+                                <input type="text" name="topx" class="btn-TOP-blank" >
+                            </div>
+                            <input type="hidden" name="controller" value="palmaresarticle">
                         </div>
 
                         <!-- Période -->
                         <div class="col-md-6 flex-column flex-align-items-center flex-gap-5">
-                                <div class="txt-liste-bold"> Période du </div>
-                                <input type="date" min="2000-01-01"  max="2100-01-01" class="date">
-                                <div class="txt-liste-bold"> au </div>
-                                <input type="date" min="2000-01-01"  max="2100-01-01" class="date">
+                            <div class="txt-liste-bold"> Période du </div>
+                            <input type="date" name="dateMin" min="2000-01-01"  max="2100-01-01" class="date">
+                            <div class="txt-liste-bold"> au </div>
+                            <input type="date" name="dateMax" min="2000-01-01"  max="2100-01-01" class="date">
                         </div>
-                    </div>
+                    </form>
                     <!-- fin des crière d'affichage -->
 
                     <!-- GRAPHIQUE -->

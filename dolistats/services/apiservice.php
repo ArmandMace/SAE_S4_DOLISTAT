@@ -3,6 +3,9 @@
 
     use yasmf\HttpHelper;
 
+    /**
+     * The APIService class
+     */
     class apiservice
     {
         /**
@@ -186,6 +189,26 @@
             // algo
             $nom = str_replace(" ", "%20", $nom);
             $url = $session["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%3Alike%3A'0')%20and%20(t.nom%3Alike%3A'". $nom ."')";
+            $curl = $this->createCurl($url);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
+
+        function getFacturesPaid()
+        {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            //algo
+            $url = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&status=paid";
             $curl = $this->createCurl($url);
 
             $result = curl_exec($curl);
