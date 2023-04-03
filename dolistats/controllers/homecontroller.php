@@ -10,7 +10,10 @@
          */
         public function index(): View
         {
-            return new View("/views/login");
+            $url = parse_ini_file('url.ini', true);
+            $view = new View("views/login");
+            $view->setVar("listeUrl", $url['listeUrl']);
+            return $view;
         }
     }
 
