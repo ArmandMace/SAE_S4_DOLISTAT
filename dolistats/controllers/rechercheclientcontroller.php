@@ -1,11 +1,12 @@
 <?php
-
     namespace controllers;
 
     use yasmf\View;
     use yasmf\HttpHelper;
     use services\APIService;
+
     session_start();
+
     class rechercheclientcontroller
     {
         private apiservice $apiService;

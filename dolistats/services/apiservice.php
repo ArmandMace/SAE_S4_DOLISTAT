@@ -24,7 +24,7 @@
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($curl, CURLOPT_FAILONERROR, true);
-            if (isset($session["token"])) {
+            if (isset($session["token"])) { // Utilise le token d'accés à l'api si utilisateur connecté
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array("DOLAPIKEY:".$session["token"]));
             }
             return $curl;
@@ -103,6 +103,10 @@
             }
         }
 
+        /**
+         * Renvoie la liste des articles vendus
+         * @return array|mixed
+         */
         function getArticleToSell()
         {
             // Variable session
@@ -123,6 +127,10 @@
             }
         }
 
+        /**
+         * Renvoie les mouvement de stock d'article
+         * @return array|mixed
+         */
         function getMvt()
         {
             // Variable session
@@ -143,6 +151,11 @@
             }
         }
 
+        /**
+         * Renvoie la liste des clients
+         * @param $designation
+         * @return array|mixed
+         */
         function getClient($designation)
         {
             // Variable session
@@ -163,6 +176,11 @@
             }
         }
 
+        /**
+         * Renvoie les données d'un client
+         * @param $nom
+         * @return array|mixed
+         */
         function getClientByNom($nom)
         {
             // Variable session
@@ -184,14 +202,14 @@
             }
         }
 
-        function getFacturesByClient($ref)
+        function getFacturesPaid()
         {
             // Variable session
             $session = json_decode(file_get_contents('session.json'), true);
 
-            // algo
-            $urlFacture = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref;
-            $curl = $this->createCurl($urlFacture);
+            //algo
+            $url = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&status=paid";
+            $curl = $this->createCurl($url);
 
             $result = curl_exec($curl);
             $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -204,5 +222,29 @@
             }
         }
 
+        /**
+         * Renvoie les différentes factures d'un client
+         * @param $ref
+         * @return array|mixed
+         */
+        function getFacturesByClient($ref)
+        {
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
+
+            // algo
+            $urlFacture = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref ."&status=paid";
+            $curl = $this->createCurl($urlFacture);
+
+            $result = curl_exec($curl);
+            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($http_status == "200") {
+                return json_decode($result, true);
+            } else {
+                return [];
+            }
+        }
     }
 

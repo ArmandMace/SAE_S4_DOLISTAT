@@ -1,11 +1,12 @@
 <?php
-namespace controllers;
+    namespace controllers;
 
     use yasmf\View;
     use yasmf\HttpHelper;
     use services\APIService;
 
     session_start();
+
     class recherchearticlecontroller
     {
         private apiservice $apiService;
@@ -23,6 +24,10 @@ namespace controllers;
             return new view("views/recherche_article");
         }
 
+        /**
+         * Recherche les différents article en fonction de la désignation
+         * @return View recherche_article avec les articles affichés
+         */
         public function rechercheArticle(): View
         {
             $designation = htmlspecialchars(httpHelper::getParam("designationArticle"));
@@ -36,6 +41,10 @@ namespace controllers;
             }
         }
 
+        /**
+         * Affiche la fiche d'un article de la liste des articles recherchés
+         * @return View fiche_article
+         */
         public function ficheArticle() : View
         {
             $ref = htmlspecialchars(httpHelper::getParam("reference"));
@@ -59,7 +68,6 @@ namespace controllers;
                 }
                 return $view;
             }
-
         }
     }
 

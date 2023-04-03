@@ -34,14 +34,34 @@
                 <!-- Mot de passe -->
                 <div>
                     <span class="fa fa-lock fa-3x"></span>
-                    <input type="text" name="password" placeholder="Mot de passe"class="login-input">
+                    <input type="text" name="password" placeholder="Mot de passe" class="login-input">
                 </div>
 
-                <!-- Link Dolibarr -->
+                <!-- Liste des URL enregistrées -->
                 <div>
                     <span class="fa fa-link fa-3x"></span>
-                    <input type="text" name="url" placeholder="URL de connexion" class="login-input">
+                    <select name="url" id="url">
+                        <option value="null">Selectionner une url</option>
+                        <option value="autre" class="login-input">Ajouter une url</option>
+                        <?php foreach ($listeUrl as $url) { ?>
+                            <option value="<?php echo $url ?>" class="login-input"><?php echo $url ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
+                <div id="autreURL" style="display:none">
+                    <input type="text" name="autreURL" id="autreURLInput" placeholder="Saisir une autre URL" class="login-input">
+                </div>
+                <!-- Script autre url -->
+                <script>
+                    document.getElementById('url').addEventListener('change', function() {
+                        var autreOption = document.getElementById('url').value === 'autre';
+                        document.getElementById('autreURL').style.display = autreOption ? 'block' : 'none';
+                        if (autreOption) {
+                            document.getElementById('autreURLInput').focus();
+                        }
+                    });
+                </script>
+
 
                 <!-- Bouton "Se connecter" -->
                 <div>
