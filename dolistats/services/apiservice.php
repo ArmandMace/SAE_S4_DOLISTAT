@@ -210,7 +210,7 @@
             $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
-            $urlFacture = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref;
+            $urlFacture = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref ."&status=paid";
             $curl = $this->createCurl($urlFacture);
 
             $result = curl_exec($curl);
