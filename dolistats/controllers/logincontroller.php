@@ -20,7 +20,10 @@
          */
         public function index() : View
         {
-            return new View("views/login");
+            $url = parse_ini_file('url.ini', true, INI_SCANNER_RAW);
+            $view = new View("views/login");
+            $view->setVar("listeUrl", $url);
+            return $view;
         }
 
         /**
@@ -33,10 +36,17 @@
             $login = htmlspecialchars(HttpHelper::getParam("login"));
             $password = htmlspecialchars(HttpHelper::getParam("password"));
             $url = htmlspecialchars(httpHelper::getParam("url"));
+            $newUrl = false;
+            if ($url == "autre") {
+                $url = HttpHelper::getParam("autreURL");
+                $newUrl = true;
+            }
+            $listeUrl = parse_ini_file('url.ini', true, INI_SCANNER_RAW);
             $dataJson = $this->apiService->login($login, $password, $url);
 
             if($dataJson == []) {
                 $view = new View("views/login");
+                $view->setVar("listeUrl", $listeUrl['listeUrl']);
                 $view->setVar("login", $login);
             } else {
                 // Mise en place de la variable session.json
@@ -52,7 +62,9 @@
 
                 //update de session.json avec les variables associés
                 file_put_contents('session.json', json_encode($session));
-
+                if ($newUrl == true) {
+                    $this->ajoutUrl($url);
+                }
                 $view = new View("views/accueil");
             }
             return $view;
@@ -63,7 +75,35 @@
         {
             // Reset de session.json
             file_put_contents('session.json', '{}');
-            return new View("views/login");
+            $url = parse_ini_file('url.ini', true, INI_SCANNER_RAW);
+            $view = new View("views/login");
+            $view->setVar("listeUrl", $url['listeUrl']);
+            return $view;
+        }
+
+        public function ajoutUrl($url) {
+            $file = 'url.ini';
+            // Charge le fichier .ini dans un tableau associatif
+            $config = parse_ini_file($file, true);
+            // Vérifie si l'URL n'est pas déjà présente dans le fichier
+            if (in_array($url, $config['listeUrl'])) {
+                return false;
+            }
+            // Ajoute l'URL à la fin de la liste
+            $config['listeUrl']['url'.(count($config['listeUrl'])+1)] = $url;
+            // Convertit le tableau associatif en chaîne de caractères .ini
+            $ini_str = '';
+            foreach ($config as $section => $values) {
+                $ini_str .= "[$section]\n";
+                foreach ($values as $key => $value) {
+                    $ini_str .= "$key = \"$value\"\n";
+                }
+            }
+            // Écrit le fichier .ini mis à jour
+            if (!file_put_contents($file, $ini_str)) {
+                die("Impossible d'écrire dans le fichier $file.");
+            }
+            return true;
         }
 
     }
