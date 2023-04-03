@@ -46,10 +46,9 @@
                 }
             }
 
-            // Calcul de la somme des sorties pour chaques produits
+            // Calcul de la somme des produits vendus
             $finalSum = array_combine($IDArticleToSell, array_fill(0, count($IDArticleToSell), 0));
             foreach ($dataJsonFactureFinal as $facture) {
-                //var_dump($facture["lines"]);
                 foreach ($facture["lines"] as $lines) {
                     $finalSum[$lines["fk_product"]] += $lines["qty"]; //les quantités sont négatives
                 }
@@ -71,7 +70,6 @@
             $dateMinUnix = strtotime($dateMin);
             $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
             $dateMaxUnix = strtotime($dateMax);
-            var_dump($dateMinUnix, $dateMaxUnix);
 
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
@@ -105,7 +103,6 @@
             $dateMinUnix = strtotime($dateMin);
             $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
             $dateMaxUnix = strtotime($dateMax);
-            var_dump($dateMinUnix, $dateMaxUnix);
 
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
@@ -139,7 +136,6 @@
             $dateMinUnix = strtotime($dateMin);
             $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
             $dateMaxUnix = strtotime($dateMax);
-            var_dump($dateMinUnix, $dateMaxUnix);
 
             $topx = intval(htmlspecialchars(httpHelper::getParam("topx")));
 

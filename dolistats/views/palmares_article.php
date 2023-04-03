@@ -177,7 +177,7 @@
                         </div>
                         <!-- fin entete -->
 
-                        <!-- Si une recherche est effectué -->
+                        <!-- Si une recherche est effectuée -->
                         <?php if (isset($top)) { ?>
 
                             <!-- ligne -->
