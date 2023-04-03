@@ -10,7 +10,7 @@
 <body class="body-login flex-row flex-justify-center">
 
 <?php
-    require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH  . "/lib/vendor/autoload.php";
+    require $_SERVER['DOCUMENT_ROOT'] . "/lib/vendor/autoload.php";
 ?>
     <!-- bloc blanc -->
     <div class="login-screen flex-column flex-align-items-center">
