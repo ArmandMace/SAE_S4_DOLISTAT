@@ -34,7 +34,7 @@ require $_SERVER['DOCUMENT_ROOT'] . PREFIX_TO_RELATIVE_PATH  . "/lib/vendor/auto
             <!-- Mot de passe -->
             <div>
                 <span class="icone fa fa-lock fa-3x"></span>
-                <input type="text" name="password" placeholder="Mot de passe" class="login-input">
+                <input type="password" name="password" placeholder="Mot de passe" class="login-input">
             </div>
 
             <!-- Liste des URL enregistrées -->
