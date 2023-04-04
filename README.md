@@ -26,6 +26,9 @@ Participants au projet : Mathys, Marion, Armand et Charlie
 # Lien vers les ressources utiles au projet
 
 Drive du projet : https://drive.google.com/drive/folders/1bFuMuYzN6jrdLTRojV3P22R1DxFh7QTZ?usp=sharing 
+
 Zenhub : https://app.zenhub.com/workspaces/sae-s4-dolistat-63ef99b5a09873001b5791f2?invite=53dGM6YeAHFH6SBu1nQr8ftG
+
 Github : https://github.com/Wailtran08/SAE_S4_DOLISTAT.git 
+
 URL du site hebergé : http://dolistats.ovh
