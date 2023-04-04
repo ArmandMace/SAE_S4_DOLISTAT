@@ -54,8 +54,15 @@
                     <input type="hidden" name="action" value="index">
                 </form>
 
+                <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
+                    <a href="palmares_client.html">
+                        <div><span class="fa fa-money-bill"> </span> </div>
+                        <div class="titre-navbar"> Chiffre d'Affaires </div>
+                    </a>
+                </div>
+
                 <!-- case utilisateur en offset -->
-                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-1 col-md-offset-7 col-xs-2">
+                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-1 col-md-offset-6 col-xs-2">
                     <button type="submit" class="btn-transparent">
                         <div><span class="fas fa-power-off"> </span> </div>
                         <div class="titre-navbar"> Déconnexion </div>
@@ -194,7 +201,7 @@
                                 <div class="col-md-2"> <?php $factureTTCDec = substr($facture["total_ttc"],0,-6);
                                     echo $factureTTCDec;
                                     ?> €</div>
-                                <div class="col-md-2"> <a href="<?php echo str_replace("api/index.php/",
+                                <div class="col-md-1"> <a href="<?php echo str_replace("api/index.php/",
                                 "document.php?modulepart=facture&file=". $facture["ref"] ."%2F". $facture["ref"] .".pdf&entity=1",
                                 $session["url"]) ?>">PDF</a> </div>
                             </div>

@@ -5,6 +5,8 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
+    session_start();
+
     class logincontroller
     {
         private apiservice $apiService;
@@ -56,6 +58,7 @@
                 $session = json_decode(file_get_contents('session.json'), true);
 
                 // affectation des variables sessions
+                $session["sessionId"] = session_id();       // = $_SESSION["sessionId"] = session_id()
                 $session["identifiant"] = $login;          // = $_SESSION["identifiant"] = $login
                 $data = $dataJson->success;
                 $session["token"] = $data->token;           // = $_SESSION["token"] = $data->token;

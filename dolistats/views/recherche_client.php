@@ -54,8 +54,15 @@
                     <input type="hidden" name="action" value="index">
                 </form>
 
+                <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
+                    <a href="palmares_client.html">
+                        <div><span class="fa fa-money-bill"> </span> </div>
+                        <div class="titre-navbar"> Chiffre d'Affaires </div>
+                    </a>
+                </div>
+
                 <!-- case utilisateur en offset -->
-                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-1 col-md-offset-7 col-xs-2">
+                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-1 col-md-offset-6 col-xs-2">
                     <button type="submit" class="btn-transparent">
                         <div><span class="fas fa-power-off"> </span> </div>
                         <div class="titre-navbar"> Déconnexion </div>
@@ -63,8 +70,11 @@
                     <input type="hidden" name="controller" value="login">
                     <input type="hidden" name="action" value="deconnexion">
                 </form>
+
             </div>
             <!-- Fin de la navbar -->
+
+
 
             <!-- searchbar -->
             <form class="row searchbar" action="index.php" method="post">

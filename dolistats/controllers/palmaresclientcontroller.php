@@ -5,6 +5,8 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
+    session_start();
+
     class palmaresclientcontroller
     {
         private apiservice $apiService;
@@ -72,8 +74,8 @@
             // Récupération des clients
             $dataJsonClient = $this->apiService->getClient("");
 
-            // Récupération des factures
-            $dataJsonFacture = $this->apiService->getFactures();
+            // Récupération des factures payés
+            $dataJsonFacture = $this->apiService->getFacturesPaid();
 
             if ($dataJsonClient == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
@@ -106,8 +108,8 @@
             // Récupération des clients
             $dataJsonClient = $this->apiService->getClient("");
 
-            // Récupération des factures
-            $dataJsonFacture = $this->apiService->getFactures();
+            // Récupération des factures payés
+            $dataJsonFacture = $this->apiService->getFacturesPaid();
 
             if ($dataJsonClient == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
@@ -141,8 +143,8 @@
             // Récupération des clients
             $dataJsonClient = $this->apiService->getClient("");
 
-            // Récupération des factures
-            $dataJsonFacture = $this->apiService->getFactures();
+            // Récupération des factures payés
+            $dataJsonFacture = $this->apiService->getFacturesPaid();
 
             if ($dataJsonClient == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide

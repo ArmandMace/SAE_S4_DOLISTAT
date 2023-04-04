@@ -52,8 +52,15 @@
                     <input type="hidden" name="action" value="index">
                 </form>
 
+                <div class="flex-column flex-gap-5 col-md-1 col-xs-2">
+                    <a href="palmares_client.html">
+                        <div><span class="fa fa-money-bill"> </span> </div>
+                        <div class="titre-navbar"> Chiffre d'Affaires </div>
+                    </a>
+                </div>
+
                 <!-- case utilisateur en offset -->
-                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-1 col-md-offset-7 col-xs-2">
+                <form action="index.php" method="post" class="flex-column flex-gap-5 col-md-1 col-md-offset-6 col-xs-2">
                     <button type="submit" class="btn-transparent">
                         <div><span class="fas fa-power-off"> </span> </div>
                         <div class="titre-navbar"> Déconnexion </div>
@@ -166,7 +173,7 @@
                                 <h2 class="txt-liste-bold"> Rang </h2>
                             </div>
                             <div class="col-xs-3 col-xs-offset-1">
-                                <h2 class="txt-liste-bold"> Nom Société </h2>
+                                <h2 class="txt-liste-bold"> Nom Article </h2>
                             </div>
                             <div class="col-xs-3 col-xs-offset-4">
                                 <h2 class="txt-liste-bold"> CA </h2>
