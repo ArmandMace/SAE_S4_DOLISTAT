@@ -201,7 +201,7 @@
                                 <div class="col-md-2"> <?php $factureTTCDec = substr($facture["total_ttc"],0,-6);
                                     echo $factureTTCDec;
                                     ?> €</div>
-                                <div class="col-md-2"> <a href="<?php echo str_replace("api/index.php/",
+                                <div class="col-md-1"> <a href="<?php echo str_replace("api/index.php/",
                                 "document.php?modulepart=facture&file=". $facture["ref"] ."%2F". $facture["ref"] .".pdf&entity=1",
                                 $session["url"]) ?>">PDF</a> </div>
                             </div>
