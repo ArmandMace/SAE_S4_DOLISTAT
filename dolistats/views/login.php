@@ -26,20 +26,20 @@
 
                 <!-- Identifiant -->
                 <div>
-                    <span class="fa fa-user fa-3x"></span>
+                    <span class="icone fa fa-user fa-3x"></span>
                     <input type="text" name="login" placeholder="Identifiant" class="login-input"
                            value="<?php if (isset($login)) { echo $login; } ?>">
                 </div>
 
                 <!-- Mot de passe -->
                 <div>
-                    <span class="fa fa-lock fa-3x"></span>
-                    <input type="text" name="password" placeholder="Mot de passe" class="login-input">
+                    <span class="icone fa fa-lock fa-3x"></span>
+                    <input type="password" name="password" placeholder="Mot de passe" class="login-input">
                 </div>
 
                 <!-- Liste des URL enregistrées -->
                 <div>
-                    <span class="fa fa-link fa-3x"></span>
+                    <span class="icone fa fa-link fa-3x"></span>
                     <select name="url" id="url">
                         <option value="null">Selectionner une url</option>
                         <option value="autre" class="login-input">Ajouter une url</option>

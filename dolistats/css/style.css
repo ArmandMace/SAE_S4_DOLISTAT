@@ -16,11 +16,32 @@
 .login-screen {
     margin-top: 10%;
     padding: 30px;
-    width: 35%;
+    width: 40%;
     background-color:white;
     box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.3);
     border-radius:10px;
 }
+
+.icone {
+    font-size: 30px;
+}
+
+@media all and (max-width: 1200px) {
+    .login-screen {
+        width: 40%;
+    }
+}
+
+@media all and (max-width: 800px){
+    .login-screen {
+        width: 70%;
+    }
+    .icone {
+        font-size: 25px;
+    }
+}
+
+
 
 .login-input {
     border: none;
@@ -129,6 +150,32 @@
     border: 2px solid #C0C3CB;
     border-radius: 5px;
     background-color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-beige {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    border: 2px solid #C0C3CB;
+    border-radius: 5px;
+    background-color: #bc9526;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-gris {
+    font-weight: bold;
+    font-size: 14px;
+    color: #7e7777;
+    border: 2px solid #C0C3CB;
+    border-radius: 5px;
+    background-color: #cad2d2;
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 5px;
