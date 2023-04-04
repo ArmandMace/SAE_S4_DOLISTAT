@@ -65,13 +65,6 @@
 
 			</div>
 			<!-- Fin de la navbar -->
-
-            <?php
-                // Variable session
-                $session = json_decode(file_get_contents('session.json'), true);
-
-                var_dump($session);
-            ?>
 		</div>
 	</body>
 </html>
