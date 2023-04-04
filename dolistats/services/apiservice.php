@@ -16,7 +16,7 @@
         function createCurl($url): \CurlHandle|false
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $curl = curl_init();
@@ -61,7 +61,7 @@
         function getArticle($designation) : mixed
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $urlArticle = $session["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.label%3Alike%3A'%25".$designation."%25')";
@@ -86,7 +86,7 @@
         function getArticleByRef($ref) : mixed
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $urlRefArticle = $session["url"] . "products?sortfield=t.ref&sortorder=ASC&limit=100&sqlfilters=(t.ref%3Alike%3A'".$ref."')";
@@ -110,7 +110,7 @@
         function getArticleToSell()
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $url = $session["url"] . "products?sortfield=t.ref&sortorder=ASC&sqlfilters=(t.tosell%3A%3D%3A1)";
@@ -135,7 +135,7 @@
         function getClient($designation)
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $urlClient = $session["url"] . "thirdparties?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=(t.fournisseur%20like%20'0'%20AND%20t.nom%20like%20'%25". $designation ."%25')";
@@ -181,7 +181,7 @@
         function getFactures()
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             //algo
             $url = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100";
@@ -206,7 +206,7 @@
         function getFacturesByClient($ref)
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $urlFacture = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&thirdparty_ids=". $ref;

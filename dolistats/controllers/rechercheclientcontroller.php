@@ -5,8 +5,6 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
-    session_start();
-
     class rechercheclientcontroller
     {
         private apiservice $apiService;
@@ -41,7 +39,7 @@
             $dataJson = $this->apiService->getClientByNom($nom);
             $dataJsonFactures = $this->apiService->getFacturesByClient($ref);
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
             if ($dataJson == []) {
                 return new view("views/recherche_client");
             } else {
