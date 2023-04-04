@@ -5,8 +5,6 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
-    session_start();
-
     class rechercheclientcontroller
     {
         private apiservice $apiService;
