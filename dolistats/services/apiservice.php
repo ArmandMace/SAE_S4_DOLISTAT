@@ -128,30 +128,6 @@
         }
 
         /**
-         * Renvoie les mouvement de stock d'article
-         * @return array|mixed
-         */
-        function getMvt()
-        {
-            // Variable session
-            $session = json_decode(file_get_contents('session.json'), true);
-
-            // algo
-            $url = $session["url"] . "stockmovements?sortfield=t.rowid&sortorder=ASC";
-            $curl = $this->createCurl($url);
-
-            $result = curl_exec($curl);
-            $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-
-            if ($http_status == "200") {
-                return json_decode($result, true);
-            } else {
-                return [];
-            }
-        }
-
-        /**
          * Renvoie la liste des clients
          * @param $designation
          * @return array|mixed
@@ -202,13 +178,13 @@
             }
         }
 
-        function getFacturesPaid()
+        function getFactures()
         {
             // Variable session
             $session = json_decode(file_get_contents('session.json'), true);
 
             //algo
-            $url = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100&status=paid";
+            $url = $session["url"] . "invoices?sortfield=t.rowid&sortorder=ASC&limit=100";
             $curl = $this->createCurl($url);
 
             $result = curl_exec($curl);
