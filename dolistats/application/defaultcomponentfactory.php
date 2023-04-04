@@ -19,6 +19,7 @@ class defaultcomponentfactory implements ComponentFactory {
     private ?apiservice $apiService = null;
 
     /**
+     * Construit le controller correspondant au nom passé en paramètre
      * @param string $controller_name name of the controller to instantiate
      * @return mixed the controller
      * @throws NoControllerAvailableForName when controller is not found
@@ -37,6 +38,7 @@ class defaultcomponentfactory implements ComponentFactory {
     }
 
     /**
+     * Construit le service correspondant au nom passé en paramètre
      * @param string $service_name name of the service to instantiate
      * @return mixed the service
      * @throws NoServiceAvailableForName when service is not found

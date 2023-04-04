@@ -1,11 +1,12 @@
 <?php
-
     namespace controllers;
 
     use yasmf\View;
     use yasmf\HttpHelper;
     use services\APIService;
+
     session_start();
+
     class rechercheclientcontroller
     {
         private apiservice $apiService;
@@ -39,6 +40,8 @@
             $ref = httpHelper::getParam("ref");
             $dataJson = $this->apiService->getClientByNom($nom);
             $dataJsonFactures = $this->apiService->getFacturesByClient($ref);
+            // Variable session
+            $session = json_decode(file_get_contents('session.json'), true);
             if ($dataJson == []) {
                 return new view("views/recherche_client");
             } else {
@@ -58,6 +61,7 @@
                     $view->setVar("identite_legale", $item["forme_juridique"]);
                     $view->setVar("capital", $item["capital"]);
                     $view->setVar("factures", $dataJsonFactures);
+                    $view->setVar("session", $session);
                 }
                 return $view;
             }

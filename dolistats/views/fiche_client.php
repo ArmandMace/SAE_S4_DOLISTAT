@@ -192,7 +192,7 @@
                                 <div class="col-md-2"> <?php echo $facture["total_ttc"]; ?> €</div>
                                 <div class="col-md-2"> <a href="<?php echo str_replace("api/index.php/",
                                 "document.php?modulepart=facture&file=". $facture["ref"] ."%2F". $facture["ref"] .".pdf&entity=1",
-                                $_SESSION["url"]) ?>">PDF</a> </div>
+                                $session["url"]) ?>">PDF</a> </div>
                             </div>
                         <?php } ?>
                         

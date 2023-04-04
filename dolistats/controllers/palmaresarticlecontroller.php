@@ -1,5 +1,4 @@
 <?php
-
     namespace controllers;
 
     use yasmf\View;
@@ -24,7 +23,12 @@
             return new view("views/palmares_article");
         }
 
-        public function top($dataJsonToSell, $dataJsonMvt) : Array
+        /**
+         * @param $dataJsonToSell
+         * @param $dataJsonMvt
+         * @return Array
+         */
+        public function top($dataJsonToSell, $dataJsonFacture, $dateMin, $dateMax) : Array
         {
             // Récupération des ID des produits vendus
             $IDArticleToSell = array();
@@ -34,18 +38,20 @@
                 array_push($DesignationArticleToSell, $article["label"]);
             }
 
-            //Comparaison des IDs des mvt avec les IDs des produits vendus + si ce sont des sorties
-            $dataJsonMvtFinal = array();
-            foreach ($dataJsonMvt as $mvt) {
-                if ( in_array($mvt["product_id"], $IDArticleToSell) && $mvt["type"] == "2") {
-                    array_push($dataJsonMvtFinal, $mvt);
+            // Comparaison de date à date
+            $dataJsonFactureFinal = array();
+            foreach ($dataJsonFacture as $facture) {
+                if ($facture["date_validation"] > $dateMin && $facture["date_validation"] < $dateMax) {
+                    array_push($dataJsonFactureFinal, $facture);
                 }
             }
 
-            // Calcul de la somme des sorties pour chaques produits
+            // Calcul de la somme des produits vendus
             $finalSum = array_combine($IDArticleToSell, array_fill(0, count($IDArticleToSell), 0));
-            foreach ($dataJsonMvtFinal as $mvt) {
-                $finalSum[$mvt["product_id"]] -= $mvt["qty"]; //les q uantités sont négatives
+            foreach ($dataJsonFactureFinal as $facture) {
+                foreach ($facture["lines"] as $lines) {
+                    $finalSum[$lines["fk_product"]] += $lines["qty"]; //les quantités sont négatives
+                }
             }
             $finalSum = array_combine($DesignationArticleToSell, $finalSum);
 
@@ -55,21 +61,27 @@
         }
 
         /**
-         * @return view
+         * @return View
          */
         public function top10() : View
         {
+            // Récupération date min et date max
+            $dateMin = htmlspecialchars(httpHelper::getParam("dateMin"));
+            $dateMinUnix = strtotime($dateMin);
+            $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
+            $dateMaxUnix = strtotime($dateMax);
+
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
 
-            // Récupération des mouvements d'entrées sorties des articles
-            $dataJsonMvt = $this->apiService->getMvt();
+            // Récupération des factures payés
+            $dataJsonFacture = $this->apiService->getFacturesPaid();
 
-            if ($dataJsonToSell == [] || $dataJsonMvt == []) {
+            if ($dataJsonToSell == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
                 return new view("views/palmares_article");
             } else {
-                $finalSum = $this->top($dataJsonToSell, $dataJsonMvt);
+                $finalSum = $this->top($dataJsonToSell, $dataJsonFacture, $dateMinUnix, $dateMaxUnix);
 
                 // Conservation du TOP 10 des ventes
                 $top10 = array_slice($finalSum, 0, 10, true);
@@ -86,24 +98,30 @@
          */
         public function top20() : View
         {
+            // Récupération date min et date max
+            $dateMin = htmlspecialchars(httpHelper::getParam("dateMin"));
+            $dateMinUnix = strtotime($dateMin);
+            $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
+            $dateMaxUnix = strtotime($dateMax);
+
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
 
-            // Récupération des mouvements d'entrées sorties des articles
-            $dataJsonMvt = $this->apiService->getMvt();
+            // Récupération des factures payés
+            $dataJsonFacture = $this->apiService->getFacturesPaid();
 
-            if ($dataJsonToSell == [] || $dataJsonMvt == []) {
+            if ($dataJsonToSell == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
                 return new view("views/palmares_article");
             } else {
-                $finalSum = $this->top($dataJsonToSell, $dataJsonMvt);
+                $finalSum = $this->top($dataJsonToSell, $dataJsonFacture, $dateMinUnix, $dateMaxUnix);
 
-                // Conservation du TOP 10 des ventes
-                $top10 = array_slice($finalSum, 0, 20, true);
+                // Conservation du TOP 20 des ventes
+                $top20 = array_slice($finalSum, 0, 20, true);
 
                 //set-var dans la vue
                 $view = new view("views/palmares_article");
-                $view->setVar("top", $top10);
+                $view->setVar("top", $top20);
                 return $view;
             }
         }
@@ -113,26 +131,32 @@
          */
         public function topx() : View
         {
+            // Récupération date min et date max
+            $dateMin = htmlspecialchars(httpHelper::getParam("dateMin"));
+            $dateMinUnix = strtotime($dateMin);
+            $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
+            $dateMaxUnix = strtotime($dateMax);
+
             $topx = intval(htmlspecialchars(httpHelper::getParam("topx")));
 
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
 
-            // Récupération des mouvements d'entrées sorties des articles
-            $dataJsonMvt = $this->apiService->getMvt();
+            // Récupération des factures payés
+            $dataJsonFacture = $this->apiService->getFacturesPaid();
 
-            if ($dataJsonToSell == [] || $dataJsonMvt == []) {
+            if ($dataJsonToSell == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
                 return new view("views/palmares_article");
             } else {
-                $finalSum = $this->top($dataJsonToSell, $dataJsonMvt);
+                $finalSum = $this->top($dataJsonToSell, $dataJsonFacture, $dateMinUnix, $dateMaxUnix);
 
-                // Conservation du TOP 10 des ventes
-                $top10 = array_slice($finalSum, 0, $topx, true);
+                // Conservation du TOP x des ventes
+                $topx = array_slice($finalSum, 0, $topx, true);
 
                 //set-var dans la vue
                 $view = new view("views/palmares_article");
-                $view->setVar("top", $top10);
+                $view->setVar("top", $topx);
                 return $view;
             }
         }
