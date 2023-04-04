@@ -3,6 +3,8 @@
 
     use yasmf\View;
 
+    session_start();
+
     class homecontroller
     {
         /**
