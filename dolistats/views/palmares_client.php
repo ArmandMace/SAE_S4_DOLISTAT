@@ -166,7 +166,7 @@
                                 <h2 class="txt-liste-bold"> Rang </h2>
                             </div>
                             <div class="col-xs-3 col-xs-offset-1">
-                                <h2 class="txt-liste-bold"> Nom Article </h2>
+                                <h2 class="txt-liste-bold"> Nom Société </h2>
                             </div>
                             <div class="col-xs-3 col-xs-offset-4">
                                 <h2 class="txt-liste-bold"> CA </h2>
