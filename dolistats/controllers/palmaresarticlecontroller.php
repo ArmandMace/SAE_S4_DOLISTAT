@@ -5,7 +5,6 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
-    session_start();
     class palmaresarticlecontroller
     {
         private apiservice $apiService;
@@ -74,8 +73,8 @@
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
 
-            // Récupération des factures payés
-            $dataJsonFacture = $this->apiService->getFacturesPaid();
+            // Récupération des factures
+            $dataJsonFacture = $this->apiService->getFactures();
 
             if ($dataJsonToSell == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
@@ -107,8 +106,8 @@
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
 
-            // Récupération des factures payés
-            $dataJsonFacture = $this->apiService->getFacturesPaid();
+            // Récupération des factures
+            $dataJsonFacture = $this->apiService->getFactures();
 
             if ($dataJsonToSell == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
@@ -131,19 +130,20 @@
          */
         public function topx() : View
         {
+            // récupération du top x
+            $topx = intval(htmlspecialchars(httpHelper::getParam("topx")));
+
             // Récupération date min et date max
             $dateMin = htmlspecialchars(httpHelper::getParam("dateMin"));
             $dateMinUnix = strtotime($dateMin);
             $dateMax = htmlspecialchars(httpHelper::getParam("dateMax"));
             $dateMaxUnix = strtotime($dateMax);
 
-            $topx = intval(htmlspecialchars(httpHelper::getParam("topx")));
-
             // Récupération des produits vendus
             $dataJsonToSell = $this->apiService->getArticleToSell();
 
-            // Récupération des factures payés
-            $dataJsonFacture = $this->apiService->getFacturesPaid();
+            // Récupération des factures
+            $dataJsonFacture = $this->apiService->getFactures();
 
             if ($dataJsonToSell == [] || $dataJsonFacture == [] || $dateMaxUnix == "" || $dateMinUnix == "") {
                 // return la view vide
