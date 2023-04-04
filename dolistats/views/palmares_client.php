@@ -137,7 +137,7 @@
                         }
                     ?>
                         <!-- graphique -->
-                        <canvas id="myChart"></canvas>
+                        <canvas id="myChart" class="padding-top-20"></canvas>
                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                         <script>
                             const ctx = document.getElementById('myChart');
@@ -147,8 +147,8 @@
                                 data: {
                                     labels: [<?php foreach ($ref as $item) { echo "\"".$item."\","; }; ?>],
                                     datasets: [{
-                                        label: 'Articles vendus',
-                                        data: [<?php foreach ($occurence as $item) { echo "'".$item."',"; }; ?>],
+                                        label: 'CA ',
+                                        data: [<?php foreach ($occurence as $item) { echo "\"".$item."\","; }; ?>],
                                         borderWidth: 1
                                     }]
                                 },

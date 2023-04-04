@@ -139,7 +139,8 @@
                         </div>
 
                         <!-- GAUCHE -->
-                        <div class="flex-column flex-gap-20 col-md-6"> 
+                        <div class="flex-column flex-gap-20 col-md-6">
+
                             <!-- lignes -->
                             <div class="row ligne"> 
                                 <div class="col-md-6"> Type du tiers </div>
@@ -172,14 +173,17 @@
                     <div class="flex-column flex-gap-20 padding-top-20">
 
                         <div class="row ligne center">
+                            <div class="col-md-1 titre-en-tete"> Etat </div>
                             <div class="col-md-2 titre-en-tete"> Ref </div>
                             <div class="col-md-2 titre-en-tete"> Date </div>
                             <div class="col-md-2 titre-en-tete"> Date Echéance </div>
                             <div class="col-md-2 titre-en-tete"> Montant HT </div>
-                            <div class="col-md-2 titre-en-tete"> Montant TTC</div>
+                            <div class="col-md-2 titre-en-tete"> Montant TTC </div>
+                            <div class="col-md-1 titre-en-tete"> PDF </div>
                         </div>
                         <?php foreach ($factures as $facture) { ?>
-                            <div class="row ligne center">
+                            <div class="row ligne center flex-row">
+                                <div class="col-md-1 <?php if($facture["paye"] == 0) { echo "btn-beige\"> Impayée"; } else { echo "btn-gris\"> Payée"; }?> </div>
                                 <div class="col-md-2"> <?php echo $facture["ref"]; ?> </div>
                                 <div class="col-md-2">
                                     <?php
