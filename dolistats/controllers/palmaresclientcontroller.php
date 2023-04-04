@@ -5,6 +5,8 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
+    session_start();
+
     class palmaresclientcontroller
     {
         private apiservice $apiService;
