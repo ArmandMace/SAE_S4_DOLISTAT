@@ -5,8 +5,6 @@
     use yasmf\HttpHelper;
     use services\APIService;
 
-    session_start();
-
     class logincontroller
     {
         private apiservice $apiService;
@@ -54,11 +52,10 @@
                 $view->setVar("login", $login);
             } else { // Json non vide, info de connexion validées par l'api -> enregistrement des info renvoyées par l'api dans la session
                 // Mise en place de la variable session.json
-                file_put_contents('session'.session_id().'.json', '{}');
-                $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+                file_put_contents('session.json', '{}');
+                $session = json_decode(file_get_contents('session.json'), true);
 
                 // affectation des variables sessions
-                $session["sessionId"] = session_id();       // = $_SESSION["sessionId"] = session_id()
                 $session["identifiant"] = $login;          // = $_SESSION["identifiant"] = $login
                 $data = $dataJson->success;
                 $session["token"] = $data->token;           // = $_SESSION["token"] = $data->token;
@@ -81,7 +78,7 @@
         public function deconnexion() : View
         {
             // Reset de session.json
-            file_put_contents('session'.session_id().'.json', '{}');
+            file_put_contents('session.json', '{}');
             $url = parse_ini_file('url.ini', true, INI_SCANNER_RAW);
             $view = new View("views/login");
             $view->setVar("listeUrl", $url['listeUrl']);
