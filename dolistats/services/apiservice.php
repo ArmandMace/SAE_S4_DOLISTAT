@@ -160,7 +160,7 @@
         function getClientByNom($nom)
         {
             // Variable session
-            $session = json_decode(file_get_contents('session'.session_id().'.json'), true);
+            $session = json_decode(file_get_contents('session.json'), true);
 
             // algo
             $nom = str_replace(" ", "%20", $nom);
