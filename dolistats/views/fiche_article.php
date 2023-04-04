@@ -125,15 +125,21 @@
                             <?php if($statusBuy != 1) { ?>
                                 <div class="row ligne">
                                     <div class="col-md-6"> Prix de vente TTC </div>
-                                    <div class="col-md-6"> <?php echo $prixTTC;?> €</div>
+                                    <div class="col-md-6"> <?php $prixTTCDec = substr($prixTTC,0,-6);
+                                        echo $prixTTCDec;
+                                        ?> €</div>
                                 </div>
                                 <div class="row ligne">
                                     <div class="col-md-6"> Prix de vente minimal TTC </div>
-                                    <div class="col-md-6"> <?php echo $prixMinTTC;?> €</div>
+                                    <div class="col-md-6"> <?php $prixMinTTCDec = substr($prixMinTTC,0,-6);
+                                        echo $prixMinTTCDec;
+                                        ?> €</div>
                                 </div>
                                 <div class="row ligne">
                                     <div class="col-md-6"> Taux TVA </div>
-                                    <div class="col-md-6"> <?php echo $tva;?> %</div>
+                                    <div class="col-md-6"> <?php $tvaDec = substr($tva,0,-5);
+                                        echo $tvaDec;
+                                        ?> %</div>
                                 </div>
                             <?php } ?>
                             <div class="row ligne">

@@ -103,7 +103,9 @@
                                 <button type="submit" class="btn-TOP-x" name="action" value="topx">
                                     <div> TOP </div>
                                 </button>
-                                <input type="text" name="topx" class="btn-TOP-blank" >
+                                <input type="text" name="topx" class="btn-TOP-blank"
+                                    <?php if (isset($_POST["topx"]) ) {
+                                        echo "value=\"".$_POST["topx"]."\"";} ?>>
                             </div>
                             <input type="hidden" name="controller" value="palmaresclient">
                         </div>
@@ -111,9 +113,11 @@
                         <!-- Période -->
                         <div class="col-md-6 flex-column flex-align-items-center flex-gap-5">
                             <div class="txt-liste-bold"> Période du </div>
-                            <input type="date" name="dateMin" min="2000-01-01"  max="2100-01-01" class="date">
+                            <input type="date" name="dateMin" min="2000-01-01"  max="2100-01-01" class="date"
+                                <?php if (isset($_POST["dateMin"])) { echo "value=\"".$_POST["dateMin"]."\"";} ?>>
                             <div class="txt-liste-bold"> au </div>
-                            <input type="date" name="dateMax" min="2000-01-01"  max="2100-01-01" class="date">
+                            <input type="date" name="dateMax" min="2000-01-01"  max="2100-01-01" class="date"
+                                <?php if (isset($_POST["dateMax"])) { echo "value=\"".$_POST["dateMax"]."\"";} ?>>
                         </div>
                     </form>
                     <!-- fin des crière d'affichage -->

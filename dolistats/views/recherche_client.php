@@ -78,7 +78,8 @@
 
             <!-- searchbar -->
             <form class="row searchbar" action="index.php" method="post">
-                <input type="text" name="designationClient" class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"  placeholder="Désignation">
+                <input type="text" name="designationClient" class="search-element search-area col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-6 col-xs-offset-1"  placeholder="Désignation"
+                    <?php if (isset($_POST["designationClient"])) { echo "value=\"".$_POST["designationClient"]."\"";} ?>>
                 <button type="submit" class="search-element search-button col-md-2 col-sm-3 col-xs-4" type="button">
                     <div><span class="fa fa-search"> </span> Rechercher </div>
                 </button>

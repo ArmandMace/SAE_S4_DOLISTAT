@@ -156,7 +156,10 @@
                             </div>
                             <div class="row ligne">
                                 <div class="col-md-6"> Capital </div>
-                                <div class="col-md-6"> <?php echo $capital; ?> </div>
+                                <div class="col-md-6">
+                                    <?php $capitalDec = substr($capital,0,-6);
+                                    echo $capitalDec;
+                                    ?> € </div>
                             </div>
                         </div>
                     </div>
@@ -192,8 +195,12 @@
                                         $date = \Datetime::createFromFormat('U', $facture["date_lim_reglement"]);
                                         echo $date->format('d/m/Y');
                                     ?> </div>
-                                <div class="col-md-2"> <?php echo $facture["total_ht"]; ?> €</div>
-                                <div class="col-md-2"> <?php echo $facture["total_ttc"]; ?> €</div>
+                                <div class="col-md-2"> <?php $factureHTDec = substr($facture["total_ht"],0,-6);
+                                    echo $factureHTDec;
+                                    ?> € </div>
+                                <div class="col-md-2"> <?php $factureTTCDec = substr($facture["total_ttc"],0,-6);
+                                    echo $factureTTCDec;
+                                    ?> €</div>
                                 <div class="col-md-1"> <a href="<?php echo str_replace("api/index.php/",
                                 "document.php?modulepart=facture&file=". $facture["ref"] ."%2F". $facture["ref"] .".pdf&entity=1",
                                 $session["url"]) ?>">PDF</a> </div>
